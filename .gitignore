@@ -1,0 +1,6 @@
+node_modules/
+test-results/
+playwright-report/
+public/report/
+docs/Software_Automation_Test_Document.html
+.vercel

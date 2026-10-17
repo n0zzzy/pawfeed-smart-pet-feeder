@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PawFeed — Smart Pet Feeder</title>
+<meta name="description" content="Control and monitor your Automatic Smart Pet Feeder.">
+<meta name="theme-color" content="#1f2a63">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PawFeed">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+  :root {
+    --bg: #f4f6fb; --card: #fff; --ink: #1d2340; --muted: #6b7290; --line: #e3e6ef;
+    --brand: #1f2a63; --accent: #12857f; --ok: #1b8a4a; --warn: #c27c0e; --bad: #c0392b;
+  }
+  * { box-sizing: border-box; }
+  button, input { font-family: inherit; }
+  body { margin: 0; font-family: Segoe UI, system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+  header { background: var(--brand); color: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  header h1 { font-size: 20px; margin: 0; }
+  header .sub { opacity: .75; font-size: 13px; }
+  header .right { margin-left: auto; display: flex; gap: 10px; align-items: center; font-size: 14px; }
+  .badge { padding: 4px 10px; border-radius: 999px; font-weight: 600; font-size: 12px; letter-spacing: .3px; }
+  .badge.CONNECTED { background: #d6f5e3; color: var(--ok); }
+  .badge.RECONNECTING { background: #fff1d6; color: var(--warn); }
+  .badge.DISCONNECTED { background: #fde0dc; color: var(--bad); }
+  main { max-width: 1180px; margin: 0 auto; padding: 20px; display: grid; gap: 16px; grid-template-columns: repeat(12, 1fr); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .card h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .6px; color: var(--muted); margin: 0 0 10px; }
+  .stat { grid-column: span 3; }
+  .stat .val { font-size: 28px; font-weight: 700; }
+  .wide { grid-column: span 6; }
+  .full { grid-column: span 12; }
+  .bar { height: 10px; background: var(--line); border-radius: 6px; overflow: hidden; margin-top: 8px; }
+  .bar > div { height: 100%; background: var(--accent); }
+  .bar.low > div { background: var(--bad); }
+  button { background: var(--accent); color: #fff; border: 0; border-radius: 8px; padding: 9px 14px; font-weight: 600; cursor: pointer; }
+  button.secondary { background: #e8ebf5; color: var(--ink); }
+  button.danger { background: var(--bad); }
+  button.big { font-size: 18px; padding: 14px 24px; }
+  input { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 14px; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+  .msg { font-size: 14px; min-height: 20px; }
+  .msg.ok { color: var(--ok); } .msg.bad { color: var(--bad); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 600; }
+  .notif { padding: 10px 12px; border-radius: 8px; margin-bottom: 8px; font-size: 14px; }
+  .notif[data-type="LOW_FOOD"] { background: #fff1d6; border-left: 4px solid var(--warn); }
+  .notif[data-type="JAM"] { background: #fde0dc; border-left: 4px solid var(--bad); }
+  .empty { color: var(--muted); font-size: 14px; }
+  .sim { border: 2px dashed #b9c0d8; background: #fafbff; }
+  .sync-ok { color: var(--ok); font-weight: 600; } .sync-wait { color: var(--warn); font-weight: 600; }
+  .mode { font-size: 11px; opacity: .8; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; padding: 2px 8px; }
+  #installBtn { display: none; background: #fff; color: var(--brand); padding: 6px 12px; }
+  .scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  @media (max-width: 860px) { .stat { grid-column: span 6; } .wide { grid-column: span 12; } }
+  @media (max-width: 600px) {
+    header { padding: 12px 16px; padding-top: max(12px, env(safe-area-inset-top)); }
+    header h1 { font-size: 18px; }
+    header .right { margin-left: 0; width: 100%; justify-content: space-between; flex-wrap: wrap; }
+    main { padding: 12px; gap: 10px; }
+    .card { padding: 12px; }
+    .stat .val { font-size: 22px; }
+    button.big { width: 100%; }
+    table { font-size: 13px; }
+    th, td { padding: 6px 5px; }
+    .sep { display: none; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🐾 PawFeed — Smart Pet Feeder</h1>
+    <div class="sub">Device: <span data-testid="device-id">FEEDER_01</span></div>
+  </div>
+  <div class="right">
+    <span>Device clock: <b data-testid="device-clock">--:--:--</b></span>
+    <span class="badge" data-testid="connection-status">...</span>
+    <span class="mode" data-testid="data-mode"></span>
+    <button id="installBtn" data-testid="install-btn">⬇ Install app</button>
+  </div>
+</header>
+
+<main>
+  <section class="card stat">
+    <h2>Food Level</h2>
+    <div class="val"><span data-testid="food-level">--</span>%</div>
+    <div class="bar" id="foodBar"><div style="width:0"></div></div>
+  </section>
+  <section class="card stat">
+    <h2>Portion Size</h2>
+    <div class="val"><span data-testid="portion-current">-</span> slot(s)</div>
+    <div class="empty">≈ <span id="portionGrams">-</span> g per feed</div>
+  </section>
+  <section class="card stat">
+    <h2>Dispense Count</h2>
+    <div class="val" data-testid="dispense-count">0</div>
+  </section>
+  <section class="card stat">
+    <h2>Last Feed</h2>
+    <div class="val"><span data-testid="last-weight">-</span> g</div>
+    <div class="empty" data-testid="last-status">No feeds yet</div>
+  </section>
+
+  <section class="card wide">
+    <h2>Manual Feed</h2>
+    <div class="row"><button class="big" data-testid="manual-feed-btn">🍽 Feed Now</button></div>
+    <div class="msg" data-testid="feed-result"></div>
+
+    <h2 style="margin-top:18px">Portion Settings</h2>
+    <div class="row">
+      <label for="portionInput">Slots (1–10, 1 slot ≈ 10 g)</label>
+      <input id="portionInput" type="number" data-testid="portion-input" style="width:90px">
+      <button data-testid="portion-save">Save Portion</button>
+    </div>
+    <div class="msg" data-testid="portion-msg"></div>
+  </section>
+
+  <section class="card wide">
+    <h2>Notifications</h2>
+    <div data-testid="notifications"></div>
+  </section>
+
+  <section class="card full">
+    <h2>Feeding Schedule</h2>
+    <div class="row">
+      <input type="time" step="1" data-testid="schedule-time">
+      <input type="number" placeholder="Slots" data-testid="schedule-slots" style="width:90px">
+      <button data-testid="schedule-add">+ Add Schedule</button>
+    </div>
+    <div class="scroll-x"><table>
+      <thead><tr><th>Meal time</th><th>Slots</th><th>Device sync</th><th></th></tr></thead>
+      <tbody data-testid="schedule-list"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card full">
+    <h2>Feed Log</h2>
+    <div class="scroll-x"><table>
+      <thead><tr><th>Time</th><th>Source</th><th>Slots</th><th>Weight (g)</th><th>Status</th></tr></thead>
+      <tbody data-testid="feed-log"></tbody>
+    </table></div>
+  </section>
+
+  <section class="card full sim">
+    <h2>🧪 Device Simulator (testing only)</h2>
+    <div class="row">
+      <button class="secondary" data-testid="sim-jam">Toggle Chute Jam</button>
+      <span>Jam: <b data-testid="sim-jam-state">OFF</b></span>
+      <span class="sep">|</span>
+      <button class="secondary" data-testid="sim-network-off">Drop Wi-Fi</button>
+      <button class="secondary" data-testid="sim-network-on">Restore Wi-Fi</button>
+      <span class="sep">|</span>
+      <span>Manual pairing calls: <b data-testid="pairing-calls">0</b></span>
+    </div>
+    <div class="row">
+      <label>Food level %</label>
+      <input type="number" data-testid="sim-food-input" style="width:90px">
+      <button class="secondary" data-testid="sim-food-set">Set IR Sensor</button>
+    </div>
+    <div class="row">
+      <label>Device clock</label>
+      <input type="time" step="1" data-testid="sim-clock-input">
+      <button class="secondary" data-testid="sim-clock-set">Set Clock + Tick</button>
+    </div>
+    <div class="row">
+      <button class="danger" data-testid="sim-reset">Reset Device</button>
+    </div>
+  </section>
+</main>
+
+<script src="/device-core.js"></script>
+<script>
+const $ = id => document.querySelector(`[data-testid="${id}"]`);
+let current = null;
+
+// "server": talk to the Node device API (local dev + tests).
+// "device": no API available (static hosting on Vercel, or offline) -> run the simulated feeder in this browser.
+let mode = 'server';
+let localDevice = null;
+const STORAGE_KEY = 'pawfeed-device';
+
+async function detectMode() {
+  try {
+    const res = await fetch('/api/status', { cache: 'no-store' });
+    if (res.ok && (res.headers.get('content-type') || '').includes('json')) return;
+  } catch { /* offline */ }
+  mode = 'device';
+  localDevice = FeederCore.createDevice({
+    load: () => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch { return null; } },
+    save: s => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch { /* storage blocked */ } },
+  });
+}
+
+async function api(method, url, body) {
+  if (mode === 'device') {
+    const [code, data] = localDevice.handle(method, url, body);
+    return { ok: code < 300, data: JSON.parse(JSON.stringify(data)) };
+  }
+  const res = await fetch(url, {
+    method, headers: { 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  return { ok: res.ok, data: await res.json() };
+}
+
+function render(s) {
+  current = s;
+  $('device-clock').textContent = s.clock;
+  const badge = $('connection-status');
+  badge.textContent = s.connection;
+  badge.className = `badge ${s.connection}`;
+
+  $('food-level').textContent = s.foodLevel;
+  const bar = document.getElementById('foodBar');
+  bar.firstElementChild.style.width = s.foodLevel + '%';
+  bar.classList.toggle('low', s.foodLevel < 15);
+
+  $('portion-current').textContent = s.portionSlots;
+  document.getElementById('portionGrams').textContent = s.portionSlots * 10;
+  $('dispense-count').textContent = s.dispenseCount;
+  $('sim-jam-state').textContent = s.jammed ? 'ON' : 'OFF';
+  $('pairing-calls').textContent = s.manualPairingCalls;
+
+  const last = s.feedLog[0];
+  $('last-weight').textContent = last ? last.weight_grams : '-';
+  $('last-status').textContent = last ? `${last.status} · ${last.source} · ${last.time}` : 'No feeds yet';
+
+  $('notifications').innerHTML = s.notifications.length
+    ? s.notifications.map(n => `<div class="notif" data-testid="notification-item" data-type="${n.type}"><b>${n.type.replace('_', ' ')}</b> — ${n.message}</div>`).join('')
+    : '<div class="empty">No notifications</div>';
+
+  $('feed-log').innerHTML = s.feedLog.length
+    ? s.feedLog.map(f => `<tr data-testid="feed-log-row"><td>${f.time}</td><td>${f.source}</td><td>${f.slots}</td><td>${f.weight_grams}</td><td>${f.status}</td></tr>`).join('')
+    : '<tr><td colspan="5" class="empty">No feed events yet</td></tr>';
+
+  // Don't wipe the schedule table while the user is editing a row
+  if (!document.querySelector('[data-editing]')) renderSchedules(s);
+}
+
+function renderSchedules(s) {
+  const onDevice = id => s.deviceSchedules.find(d => d.id === id);
+  $('schedule-list').innerHTML = s.schedules.length
+    ? s.schedules.map(sc => {
+        const d = onDevice(sc.id);
+        const synced = d && d.time === sc.time && d.slots === sc.slots;
+        return `<tr data-testid="schedule-row" data-id="${sc.id}">
+          <td data-testid="schedule-row-time">${sc.time}</td>
+          <td>${sc.slots}</td>
+          <td data-testid="schedule-sync-status" class="${synced ? 'sync-ok' : 'sync-wait'}">${synced ? '✔ Synced to device' : '⏳ Syncing…'}</td>
+          <td><button class="secondary" data-testid="schedule-edit" onclick="editSchedule(${sc.id})">Edit</button>
+              <button class="secondary" onclick="deleteSchedule(${sc.id})">Delete</button></td>
+        </tr>`;
+      }).join('')
+    : '<tr><td colspan="4" class="empty">No schedules yet</td></tr>';
+}
+
+function editSchedule(id) {
+  const row = document.querySelector(`[data-testid="schedule-row"][data-id="${id}"]`);
+  const cell = row.querySelector('[data-testid="schedule-row-time"]');
+  row.setAttribute('data-editing', '1');
+  cell.innerHTML = `<input type="time" step="1" data-testid="schedule-edit-time" value="${cell.textContent}">
+                    <button data-testid="schedule-edit-save">Save</button>`;
+  cell.querySelector('button').onclick = async () => {
+    await api('PUT', '/api/schedules', { id, time: cell.querySelector('input').value });
+    row.removeAttribute('data-editing');
+    refresh();
+  };
+}
+
+async function deleteSchedule(id) { await api('DELETE', '/api/schedules', { id }); refresh(); }
+
+async function refresh() { render((await api('GET', '/api/status')).data); }
+
+$('manual-feed-btn').onclick = async () => {
+  const { ok, data } = await api('POST', '/api/feed');
+  const msg = $('feed-result');
+  if (ok) { msg.className = 'msg ok'; msg.textContent = `✔ Dispensed ${data.weight_grams} g (${data.slots} slot/s)`; }
+  else if (data.status === 'JAM_DETECTED') { msg.className = 'msg bad'; msg.textContent = '✘ JAM_DETECTED — nothing dispensed (0 g). Clear the chute.'; }
+  else { msg.className = 'msg bad'; msg.textContent = `✘ ${data.status} — device not reachable.`; }
+  refresh();
+};
+
+$('portion-save').onclick = async () => {
+  const { ok, data } = await api('POST', '/api/portion', { slots: $('portion-input').value });
+  const msg = $('portion-msg');
+  msg.className = ok ? 'msg ok' : 'msg bad';
+  msg.textContent = ok ? `✔ Portion saved: ${data.portionSlots} slot(s)` : `✘ ${data.status}: ${data.message}`;
+  refresh();
+};
+
+$('schedule-add').onclick = async () => {
+  await api('POST', '/api/schedules', { time: $('schedule-time').value, slots: $('schedule-slots').value });
+  refresh();
+};
+
+$('sim-jam').onclick = async () => { await api('POST', '/api/sim/jam', { jammed: !current.jammed }); refresh(); };
+$('sim-network-off').onclick = async () => { await api('POST', '/api/sim/network', { connected: false }); refresh(); };
+$('sim-network-on').onclick = async () => { await api('POST', '/api/sim/network', { connected: true }); refresh(); };
+$('sim-food-set').onclick = async () => { await api('POST', '/api/sim/food', { percent: $('sim-food-input').value }); refresh(); };
+$('sim-clock-set').onclick = async () => { await api('POST', '/api/sim/clock', { time: $('sim-clock-input').value }); refresh(); };
+$('sim-reset').onclick = async () => { await api('POST', '/api/sim/reset'); $('feed-result').textContent = ''; $('portion-msg').textContent = ''; refresh(); };
+
+// ----- installable app (PWA) -----
+let installPrompt = null;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  installPrompt = e;
+  document.getElementById('installBtn').style.display = 'inline-block';
+});
+document.getElementById('installBtn').onclick = async () => {
+  if (!installPrompt) return;
+  installPrompt.prompt();
+  await installPrompt.userChoice;
+  installPrompt = null;
+  document.getElementById('installBtn').style.display = 'none';
+};
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+
+(async () => {
+  await detectMode();
+  $('data-mode').textContent = mode === 'server' ? 'Cloud API' : 'On-device demo';
+  refresh();
+  setInterval(refresh, 250);
+})();
+</script>
+</body>
+</html>
