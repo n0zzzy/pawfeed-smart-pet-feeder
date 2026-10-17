@@ -377,6 +377,7 @@ const html = `<!doctype html>
   .page { break-before: page; }
   .wrap2 { flex-wrap: wrap; }
   .wrap2 figure { flex: 1 1 45%; }
+  .wrap2 figure.full { flex-basis: 100%; }
   table.signoff td { vertical-align: middle; }
   table.signoff td:nth-child(3) { width: 34%; padding: 2px 8px; }
   .sig { height: 0.5in; width: auto; display: block; }
@@ -562,7 +563,9 @@ ${table(['Test Case', ...PLATFORMS.map(p => p.label)], cases.map(c => [
 <p>Screenshots taken by the tester during the run on ${RUN_AT}: every test case passed on every platform.
 The same suite also passed in the CI/CD pipeline (Section 16), and the Allure report of this run is shown in Section 15.</p>
 ${evidence.length
-  ? `<div class="shots2 wrap2">${evidence.map((f, i) => figure(f.file, `Figure 1${'abcdefgh'[i]} — ${f.caption}`, 'width:100%')).join('')}</div>`
+  ? `<div class="shots2 wrap2">${evidence.map((f, i) => `
+      <figure class="${f.file.includes('terminal') ? 'full' : ''}"><img src="${img(f.file)}" style="width:100%">
+      <figcaption>Figure 1${'abcdefghijklmnop'[i]} — ${esc(f.caption)}</figcaption></figure>`).join('')}</div>`
   : '<div class="missing">[Tester screenshots of this run not added yet]</div>'}
 
 <h2>13. Automation Coverage</h2>

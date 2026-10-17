@@ -254,7 +254,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 10 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -265,16 +265,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 730,
+                      "duration": 1526,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:54.251Z",
+                      "startTime": "2026-10-17T05:27:29.701Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 10 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
@@ -330,12 +330,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 674,
+                      "duration": 800,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:55.145Z",
+                      "startTime": "2026-10-17T05:27:31.519Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -384,7 +384,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 9.9 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 9.8 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -395,16 +395,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 799,
+                      "duration": 829,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:18.933Z",
+                      "startTime": "2026-10-17T05:27:55.488Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 9.9 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 9.8 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
@@ -460,12 +460,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1063,
+                      "duration": 779,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:19.894Z",
+                      "startTime": "2026-10-17T05:27:56.483Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -514,7 +514,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 10 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -525,16 +525,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1330,
+                      "duration": 1205,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:48.541Z",
+                      "startTime": "2026-10-17T05:28:20.979Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 10 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
@@ -590,12 +590,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1309,
+                      "duration": 1165,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:50.466Z",
+                      "startTime": "2026-10-17T05:28:22.372Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -663,12 +663,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 773,
+                      "duration": 826,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:55.873Z",
+                      "startTime": "2026-10-17T05:27:32.372Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -728,12 +728,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 678,
+                      "duration": 692,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:56.701Z",
+                      "startTime": "2026-10-17T05:27:33.254Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -782,7 +782,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.1 g (within 47.5–52.5 g)."
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.8 g (within 47.5–52.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -793,16 +793,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 931,
+                      "duration": 845,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:21.041Z",
+                      "startTime": "2026-10-17T05:27:57.335Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.1 g (within 47.5–52.5 g)."
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.8 g (within 47.5–52.5 g)."
                         }
                       ],
                       "attachments": [
@@ -858,12 +858,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 952,
+                      "duration": 726,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:22.054Z",
+                      "startTime": "2026-10-17T05:27:58.253Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -923,12 +923,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1544,
+                      "duration": 1224,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:51.838Z",
+                      "startTime": "2026-10-17T05:28:23.597Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -988,12 +988,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1190,
+                      "duration": 986,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:53.450Z",
+                      "startTime": "2026-10-17T05:28:24.874Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1050,7 +1050,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.3 g for 3 slots."
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.5 g for 3 slots."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1061,16 +1061,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1582,
+                      "duration": 1597,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:57.429Z",
+                      "startTime": "2026-10-17T05:27:33.994Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.3 g for 3 slots."
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.5 g for 3 slots."
                         }
                       ],
                       "attachments": [
@@ -1115,7 +1115,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.4 g for 3 slots."
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.6 g for 3 slots."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1126,16 +1126,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1835,
+                      "duration": 1563,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:23.080Z",
+                      "startTime": "2026-10-17T05:27:59.035Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.4 g for 3 slots."
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.6 g for 3 slots."
                         }
                       ],
                       "attachments": [
@@ -1180,7 +1180,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.6 g for 3 slots."
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.4 g for 3 slots."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1191,16 +1191,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2441,
+                      "duration": 2146,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:54.701Z",
+                      "startTime": "2026-10-17T05:28:25.908Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.6 g for 3 slots."
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.4 g for 3 slots."
                         }
                       ],
                       "attachments": [
@@ -1264,12 +1264,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 672,
+                      "duration": 661,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:59.078Z",
+                      "startTime": "2026-10-17T05:27:35.649Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1329,12 +1329,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2198,
+                      "duration": 2068,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:12:59.801Z",
+                      "startTime": "2026-10-17T05:27:36.355Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1394,12 +1394,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 811,
+                      "duration": 659,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:25.003Z",
+                      "startTime": "2026-10-17T05:28:00.660Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1459,12 +1459,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2370,
+                      "duration": 2208,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:25.874Z",
+                      "startTime": "2026-10-17T05:28:01.371Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1524,12 +1524,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1888,
+                      "duration": 1019,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:57.235Z",
+                      "startTime": "2026-10-17T05:28:28.107Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1589,12 +1589,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2915,
+                      "duration": 2540,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:59.276Z",
+                      "startTime": "2026-10-17T05:28:29.172Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1662,12 +1662,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9226,
+                      "duration": 9045,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:02.058Z",
+                      "startTime": "2026-10-17T05:27:38.475Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1732,12 +1732,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9445,
+                      "duration": 9366,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:28.324Z",
+                      "startTime": "2026-10-17T05:28:03.644Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1791,7 +1791,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.4 s after Wi-Fi was restored; manual pairing calls = 0."
+                      "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.6 s after Wi-Fi was restored; manual pairing calls = 0."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1802,16 +1802,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 10165,
+                      "duration": 9788,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:02.255Z",
+                      "startTime": "2026-10-17T05:28:31.755Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.4 s after Wi-Fi was restored; manual pairing calls = 0."
+                          "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.6 s after Wi-Fi was restored; manual pairing calls = 0."
                         }
                       ],
                       "attachments": [
@@ -1884,7 +1884,7 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2325,
+                      "duration": 2733,
                       "errors": [],
                       "stdout": [
                         {
@@ -1893,7 +1893,7 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:11.415Z",
+                      "startTime": "2026-10-17T05:27:47.628Z",
                       "annotations": [
                         {
                           "type": "sync-time",
@@ -1946,11 +1946,11 @@
                   "annotations": [
                     {
                       "type": "sync-time",
-                      "description": "1.14 s"
+                      "description": "0.61 s"
                     },
                     {
                       "type": "actual",
-                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 1.14 s (limit < 2 s)."
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.61 s (limit < 2 s)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1961,24 +1961,24 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2711,
+                      "duration": 2153,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Schedule sync took 1.14 s\n"
+                          "text": "Schedule sync took 0.61 s\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:37.922Z",
+                      "startTime": "2026-10-17T05:28:13.131Z",
                       "annotations": [
                         {
                           "type": "sync-time",
-                          "description": "1.14 s"
+                          "description": "0.61 s"
                         },
                         {
                           "type": "actual",
-                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 1.14 s (limit < 2 s)."
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.61 s (limit < 2 s)."
                         }
                       ],
                       "attachments": [
@@ -2023,11 +2023,11 @@
                   "annotations": [
                     {
                       "type": "sync-time",
-                      "description": "0.68 s"
+                      "description": "0.92 s"
                     },
                     {
                       "type": "actual",
-                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.68 s (limit < 2 s)."
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.92 s (limit < 2 s)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -2038,24 +2038,24 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3997,
+                      "duration": 2860,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Schedule sync took 0.68 s\n"
+                          "text": "Schedule sync took 0.92 s\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:12.510Z",
+                      "startTime": "2026-10-17T05:28:41.614Z",
                       "annotations": [
                         {
                           "type": "sync-time",
-                          "description": "0.68 s"
+                          "description": "0.92 s"
                         },
                         {
                           "type": "actual",
-                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.68 s (limit < 2 s)."
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.92 s (limit < 2 s)."
                         }
                       ],
                       "attachments": [
@@ -2121,12 +2121,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 613,
+                      "duration": 593,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:13.815Z",
+                      "startTime": "2026-10-17T05:27:50.420Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2188,12 +2188,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 577,
+                      "duration": 686,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:14.474Z",
+                      "startTime": "2026-10-17T05:27:51.053Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2255,12 +2255,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 716,
+                      "duration": 619,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:40.724Z",
+                      "startTime": "2026-10-17T05:28:15.347Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2322,12 +2322,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1113,
+                      "duration": 706,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:41.515Z",
+                      "startTime": "2026-10-17T05:28:16.015Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2389,12 +2389,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1540,
+                      "duration": 911,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:16.591Z",
+                      "startTime": "2026-10-17T05:28:44.529Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2456,12 +2456,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2023,
+                      "duration": 1012,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:18.203Z",
+                      "startTime": "2026-10-17T05:28:45.482Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2520,7 +2520,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.1 g and still showed 1 feed after reload."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -2531,16 +2531,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 743,
+                      "duration": 667,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:15.099Z",
+                      "startTime": "2026-10-17T05:27:51.779Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.1 g and still showed 1 feed after reload."
                         }
                       ],
                       "attachments": [
@@ -2587,7 +2587,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10 g and still showed 1 feed after reload."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -2598,16 +2598,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1383,
+                      "duration": 770,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:42.727Z",
+                      "startTime": "2026-10-17T05:28:16.774Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10 g and still showed 1 feed after reload."
                         }
                       ],
                       "attachments": [
@@ -2654,7 +2654,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.2 g and still showed 1 feed after reload."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -2665,16 +2665,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1505,
+                      "duration": 1007,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:20.311Z",
+                      "startTime": "2026-10-17T05:28:46.540Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.2 g and still showed 1 feed after reload."
                         }
                       ],
                       "attachments": [
@@ -2740,12 +2740,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 593,
+                      "duration": 564,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:15.894Z",
+                      "startTime": "2026-10-17T05:27:52.493Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2807,12 +2807,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1077,
+                      "duration": 610,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:44.191Z",
+                      "startTime": "2026-10-17T05:28:17.602Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2874,12 +2874,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1155,
+                      "duration": 849,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:21.882Z",
+                      "startTime": "2026-10-17T05:28:47.595Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2950,12 +2950,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 548,
+                      "duration": 528,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:16.532Z",
+                      "startTime": "2026-10-17T05:27:53.097Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -3022,12 +3022,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 417,
+                      "duration": 447,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:17.129Z",
+                      "startTime": "2026-10-17T05:27:53.664Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -3090,12 +3090,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 958,
+                      "duration": 707,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:45.383Z",
+                      "startTime": "2026-10-17T05:28:18.262Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -3162,12 +3162,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 515,
+                      "duration": 502,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:46.430Z",
+                      "startTime": "2026-10-17T05:28:19.019Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -3230,12 +3230,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1198,
+                      "duration": 924,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:23.089Z",
+                      "startTime": "2026-10-17T05:28:48.483Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -3302,12 +3302,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 781,
+                      "duration": 623,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:24.349Z",
+                      "startTime": "2026-10-17T05:28:49.450Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -3364,7 +3364,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.5 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.5 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -3375,16 +3375,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 786,
+                      "duration": 757,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:17.580Z",
+                      "startTime": "2026-10-17T05:27:54.142Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.5 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.5 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
                         }
                       ],
                       "attachments": [
@@ -3429,7 +3429,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -3440,16 +3440,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 921,
+                      "duration": 863,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:13:46.983Z",
+                      "startTime": "2026-10-17T05:28:19.551Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
                         }
                       ],
                       "attachments": [
@@ -3494,7 +3494,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.7 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -3505,16 +3505,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1227,
+                      "duration": 1165,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T05:14:25.165Z",
+                      "startTime": "2026-10-17T05:28:50.103Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.7 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
                         }
                       ],
                       "attachments": [
@@ -3556,8 +3556,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-17T05:12:53.670Z",
-    "duration": 93052.875,
+    "startTime": "2026-10-17T05:27:29.050Z",
+    "duration": 82521.314,
     "expected": 48,
     "skipped": 0,
     "unexpected": 0,

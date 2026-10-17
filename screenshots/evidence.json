@@ -1,0 +1,11 @@
+{
+  "EVIDENCE-01_terminal_part1.png": "Terminal: npm test — tests 1–41 passing on Desktop Chrome, Android and iPhone",
+  "EVIDENCE-02_terminal_part2.png": "Terminal: tests 42–48 passed — “48 passed (1.4m)”",
+  "EVIDENCE-03_report_desktop.png": "Playwright HTML report: Desktop Chrome — ATC-01 to ATC-16 passed",
+  "EVIDENCE-04_report_android.png": "Playwright HTML report: Android (Pixel 7) — ATC-01 to ATC-16 passed",
+  "EVIDENCE-05_report_iphone.png": "Playwright HTML report: iPhone 14 — ATC-02 to ATC-16 passed",
+  "EVIDENCE-06_allure_summary.png": "Allure Report: 48 of 48 passed (100%)",
+  "EVIDENCE-07_allure_suites_a.png": "Allure Report: Portion, Scheduling and Low Food Alert suites passed",
+  "EVIDENCE-08_allure_suites_b.png": "Allure Report: Wi-Fi, App Sync, Mobile App and Hosting suites passed",
+  "EVIDENCE-09_allure_suites_c.png": "Allure Report: Responsive, Login and Database suites passed"
+}

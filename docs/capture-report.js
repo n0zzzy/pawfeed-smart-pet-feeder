@@ -69,6 +69,9 @@ const server = staticServer(root);
   const phone = await browser.newContext({ ...devices['Pixel 7'] });
   const live = await phone.newPage();
   await live.goto(LIVE_URL);
+  await live.locator('[data-testid="login-username"]').fill('testuser');
+  await live.locator('[data-testid="login-password"]').fill('Feeder@123');
+  await live.locator('[data-testid="login-submit"]').click();
   await live.getByText('On-device demo').waitFor();
   await live.screenshot({ path: path.join(out, 'CI-02_live_app_on_phone.png') });
 
