@@ -325,6 +325,9 @@ const html = `<!doctype html>
   .checks div { margin: 2px 0; }
   .metric td:last-child { font-weight: 700; }
   .page { break-before: page; }
+  table.signoff td { vertical-align: middle; }
+  table.signoff td:nth-child(3) { width: 34%; padding: 2px 8px; }
+  .sig { height: 0.5in; width: auto; display: block; }
   .pipeline { display: flex; align-items: stretch; gap: 6px; margin: 8px 0; font-size: 9pt; }
   .pipeline div { flex: 1; border: 1px solid #cfd4e2; border-radius: 6px; padding: 6px 8px; background: #f3f6fb; }
   .pipeline b { color: #1f2a63; display: block; }
@@ -574,13 +577,12 @@ ${table(['Item', 'Status', 'Notes'], [
 ${figure('CI-01_github_actions_run.png', 'Figure 2 — GitHub Actions: CI/CD run #1 succeeded — Playwright tests (39 runs) → Deploy to Vercel (with live smoke test)', 'width:88%')}
 ${figure('CI-02_live_app_on_phone.png', `Figure 3 — The live app on Vercel (${LIVE_URL.replace('https://', '')}) on an emulated Android phone`, 'width:30%')}
 
-<h2>17. Test Sign-Off</h2>
-${table(['Role', 'Name', 'Signature', 'Date'], [
-  ['QA Lead', 'Russel Carlo T. Manzon', '&nbsp;', DOC_DATE],
-  ['Test Manager', '&nbsp;', '&nbsp;', '&nbsp;'],
-  ['Development Lead', 'Russel Carlo T. Manzon', '&nbsp;', DOC_DATE],
-  ['Business Owner', '&nbsp;', '&nbsp;', '&nbsp;'],
-])}
+<h2 class="page">17. Test Sign-Off</h2>
+${table(['Role', 'Name', 'Signature', 'Date'],
+  ['QA Lead', 'Test Manager', 'Development Lead', 'Business Owner'].map(role =>
+    [role, 'Russel Carlo T. Manzon', '<img class="sig" src="signature.png" alt="Signature of Russel Carlo T. Manzon">', DOC_DATE]),
+  'signoff')}
+<p class="muted">Solo project: every role was carried out by the student, Russel Carlo T. Manzon. Instructor review is recorded under “Reviewed By” in Section 1.</p>
 <h4>Final Recommendation</h4>
 <p><b>Go Live Status:</b></p>
 <div class="checks">
