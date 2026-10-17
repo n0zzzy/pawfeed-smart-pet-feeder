@@ -10,7 +10,8 @@ module.exports = defineConfig({
   globalTeardown: './tests/global-teardown.js',
   reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: 'docs/results.json' }]],
   use: {
-    baseURL: 'http://localhost:3000',
+    // Set BASE_URL to test a deployed site (e.g. the Vercel URL) instead of the local server.
+    baseURL: process.env.BASE_URL || 'http://localhost:3000',
     screenshot: 'on',
     video: 'on',
     // Full traces locally; in CI keep them only for failures so the published report stays small.
@@ -23,7 +24,7 @@ module.exports = defineConfig({
     { name: 'android-pixel7', use: { ...devices['Pixel 7'] } },
     { name: 'iphone-14', use: { ...devices['iPhone 14'] } },
   ],
-  webServer: {
+  webServer: process.env.BASE_URL ? undefined : {
     command: 'node server.js',
     url: 'http://localhost:3000',
     reuseExistingServer: !process.env.CI,

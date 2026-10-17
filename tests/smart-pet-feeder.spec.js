@@ -201,7 +201,7 @@ test.describe('AS-06 Mobile App Schedule Sync (TC-14)', () => {
 });
 
 test.describe('Mobile App (PWA)', () => {
-  test('ATC-10: App is installable — valid manifest, icons and active service worker', async ({ page, request }, testInfo) => {
+  test('ATC-10: App is installable — valid manifest, icons and active service worker', { tag: '@smoke' }, async ({ page, request }, testInfo) => {
     await expect(page.locator('link[rel="manifest"]')).toHaveAttribute('href', '/manifest.webmanifest');
 
     const res = await request.get('/manifest.webmanifest');
@@ -223,7 +223,7 @@ test.describe('Mobile App (PWA)', () => {
     await snap(page, testInfo, 'ATC-10_pwa_installable');
   });
 
-  test('ATC-11: App still opens and feeds while the phone is offline', async ({ page, context }, testInfo) => {
+  test('ATC-11: App still opens and feeds while the phone is offline', { tag: '@smoke' }, async ({ page, context }, testInfo) => {
     await expect.poll(() => page.evaluate(async () =>
       (await navigator.serviceWorker.getRegistration())?.active?.state), { timeout: 10_000 }).toBe('activated');
 
@@ -245,7 +245,7 @@ test.describe('Hosted on Vercel (no device API)', () => {
   // Fresh browser context with no service worker so the /api route mock is always hit.
   test.use({ serviceWorkers: 'block' });
 
-  test('ATC-12: Hosted app runs the feeder on the device and keeps data after reload', async ({ page }, testInfo) => {
+  test('ATC-12: Hosted app runs the feeder on the device and keeps data after reload', { tag: '@smoke' }, async ({ page }, testInfo) => {
     await page.route('**/api/**', route => route.fulfill({ status: 404, contentType: 'text/html', body: 'Not Found' }));
     await page.goto('/');
 
@@ -266,7 +266,7 @@ test.describe('Hosted on Vercel (no device API)', () => {
 });
 
 test.describe('Responsive layout', () => {
-  test('ATC-13: Layout fits the screen with no sideways scrolling and a tappable Feed button', async ({ page }, testInfo) => {
+  test('ATC-13: Layout fits the screen with no sideways scrolling and a tappable Feed button', { tag: '@smoke' }, async ({ page }, testInfo) => {
     const { scrollWidth, clientWidth } = await page.evaluate(() => ({
       scrollWidth: document.documentElement.scrollWidth,
       clientWidth: document.documentElement.clientWidth,

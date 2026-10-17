@@ -1,7 +1,11 @@
 # CI/CD for PawFeed — Smart Pet Feeder
 #  1. test:   on every push / pull request, run the Playwright suite on Desktop Chrome, Android (Pixel 7) and iPhone 14
-#  2. deploy: only on main and only if every test passed, deploy the app (plus the live test report at /report) to Vercel
+#  2. deploy: only on main and only if every test passed, deploy the app (plus the live test report at /report) to Vercel,
+#             then smoke-test the live production site on all three platforms
 name: CI/CD
+
+env:
+  PROD_URL: https://pawfeed-smart-pet-feeder.vercel.app
 
 on:
   push:
@@ -49,12 +53,16 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: ${{ steps.deploy.outputs.url }}
+      url: ${{ env.PROD_URL }}
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
       - name: Add the test report to the site (/report)
         uses: actions/download-artifact@v4
         with:
@@ -67,5 +75,10 @@ jobs:
       - name: Build
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy
-        id: deploy
-        run: echo "url=$(vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Install test dependencies
+        run: npm ci && npx playwright install --with-deps chromium webkit
+      - name: Smoke test the live site
+        env:
+          BASE_URL: ${{ env.PROD_URL }}
+        run: npx playwright test --grep @smoke
