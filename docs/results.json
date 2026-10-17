@@ -28,8 +28,40 @@
         "metadata": {
           "actualWorkers": 1
         },
-        "id": "chromium",
-        "name": "chromium",
+        "id": "desktop-chrome",
+        "name": "desktop-chrome",
+        "testDir": "C:/Users/windows 11/finals-quality-smart-pet-feeder/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/windows 11/finals-quality-smart-pet-feeder/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "android-pixel7",
+        "name": "android-pixel7",
+        "testDir": "C:/Users/windows 11/finals-quality-smart-pet-feeder/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "C:/Users/windows 11/finals-quality-smart-pet-feeder/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "iphone-14",
+        "name": "iphone-14",
         "testDir": "C:/Users/windows 11/finals-quality-smart-pet-feeder/tests",
         "testIgnore": [],
         "testMatch": [
@@ -48,7 +80,7 @@
         "metadata": {
           "actualWorkers": 1
         },
-        "name": "chromium",
+        "name": "desktop-chrome",
         "testDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests",
         "snapshotDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests",
         "testIgnore": [],
@@ -75,7 +107,83 @@
         },
         "dependencies": [],
         "ignoreSnapshots": false,
-        "__projectId": "chromium"
+        "__projectId": "desktop-chrome"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "android-pixel7",
+        "testDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests",
+        "snapshotDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3000",
+          "screenshot": "on",
+          "video": "on",
+          "trace": "on",
+          "viewport": {
+            "width": 412,
+            "height": 839
+          },
+          "userAgent": "Mozilla/5.0 (Linux; Android 14; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Mobile Safari/537.36",
+          "screen": {
+            "width": 412,
+            "height": 915
+          },
+          "deviceScaleFactor": 2.625,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "android-pixel7"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "iphone-14",
+        "testDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests",
+        "snapshotDir": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:3000",
+          "screenshot": "on",
+          "video": "on",
+          "trace": "on",
+          "viewport": {
+            "width": 390,
+            "height": 664
+          },
+          "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Mobile/15E148 Safari/604.1",
+          "screen": {
+            "width": 390,
+            "height": 844
+          },
+          "deviceScaleFactor": 3,
+          "isMobile": true,
+          "hasTouch": true,
+          "defaultBrowserType": "webkit"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "iphone-14"
       }
     ],
     "quiet": false,
@@ -124,7 +232,7 @@
         {
           "title": "AS-01 Manual Feed Trigger (TC-02)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 35,
+          "line": 37,
           "column": 6,
           "specs": [
             {
@@ -137,49 +245,49 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 10.2 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 540,
+                      "duration": 641,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:42.511Z",
+                      "startTime": "2026-10-17T00:21:39.528Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 10.2 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
                         {
                           "name": "ATC-01_manual_feed_success",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--chromium\\attachments\\ATC-01-manual-feed-success-62ddf37bcbcb3404396f63ff54306d8c1e21b2bf.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--desktop-chrome\\attachments\\ATC-01-manual-feed-success-62ddf37bcbcb3404396f63ff54306d8c1e21b2bf.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -187,9 +295,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-fe7ad687a1ca4e440d4e",
+              "id": "58b4600fb8a5c556fc87-94dad84cdabbd9392846",
               "file": "smart-pet-feeder.spec.js",
-              "line": 36,
+              "line": 38,
               "column": 3
             },
             {
@@ -206,19 +314,19 @@
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 514,
+                      "duration": 544,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:43.217Z",
+                      "startTime": "2026-10-17T00:21:40.349Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -229,22 +337,22 @@
                         {
                           "name": "ATC-02_manual_feed_jam_detected",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-chromium\\attachments\\ATC-02-manual-feed-jam-detected-982038a05cf893ffbeb57c14639aee71c1707316.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-desktop-chrome\\attachments\\ATC-02-manual-feed-jam-detected-982038a05cf893ffbeb57c14639aee71c1707316.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -252,9 +360,269 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-c1c63c6a452e070ba145",
+              "id": "58b4600fb8a5c556fc87-9b1ad96ede14e440cb5b",
               "file": "smart-pet-feeder.spec.js",
-              "line": 53,
+              "line": 55,
+              "column": 3
+            },
+            {
+              "title": "ATC-01: Manual feed dispenses exactly one portion (~10 g)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 686,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:01.300Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-01_manual_feed_success",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--android-pixel7\\attachments\\ATC-01-manual-feed-success-1c08e677656dfb3b46986bc81ed71158f524384f.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-40711d856eb781607e19",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 38,
+              "column": 3
+            },
+            {
+              "title": "ATC-02: Manual feed is blocked when the chute is jammed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Status JAM_DETECTED, 0 g dispensed, dispense count stayed 0, JAM notification shown."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 622,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:02.148Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Status JAM_DETECTED, 0 g dispensed, dispense count stayed 0, JAM notification shown."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-02_manual_feed_jam_detected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-android-pixel7\\attachments\\ATC-02-manual-feed-jam-detected-802d4e8ab47b4f97017985e5d3b233827dc181ef.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-6e753f99e6b846783259",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 55,
+              "column": 3
+            },
+            {
+              "title": "ATC-01: Manual feed dispenses exactly one portion (~10 g)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 933,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:23.349Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-01_manual_feed_success",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--iphone-14\\attachments\\ATC-01-manual-feed-success-2296bf28bfca42d7d2219c2dae0f9390ad27a832.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-b71e4-s-exactly-one-portion-10-g--iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-312d386697a80f07cc74",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 38,
+              "column": 3
+            },
+            {
+              "title": "ATC-02: Manual feed is blocked when the chute is jammed",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Status JAM_DETECTED, 0 g dispensed, dispense count stayed 0, JAM notification shown."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 959,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:24.546Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Status JAM_DETECTED, 0 g dispensed, dispense count stayed 0, JAM notification shown."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-02_manual_feed_jam_detected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-iphone-14\\attachments\\ATC-02-manual-feed-jam-detected-ba17620e5f7b8b08a18b7f5006da0300e1de3569.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-01-Man-274fe-ed-when-the-chute-is-jammed-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-0eb9d558722679de1494",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 55,
               "column": 3
             }
           ]
@@ -262,7 +630,7 @@
         {
           "title": "AS-02 Portion Size Configuration (TC-03)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 69,
+          "line": 71,
           "column": 6,
           "specs": [
             {
@@ -275,49 +643,49 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Portion saved and still 5 slots after page reload; dispensed 50.9 g (within 47.5–52.5 g)."
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.4 g (within 47.5–52.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 557,
+                      "duration": 660,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:43.779Z",
+                      "startTime": "2026-10-17T00:21:40.948Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Portion saved and still 5 slots after page reload; dispensed 50.9 g (within 47.5–52.5 g)."
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.4 g (within 47.5–52.5 g)."
                         }
                       ],
                       "attachments": [
                         {
                           "name": "ATC-03_portion_5_slots_50g",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-chromium\\attachments\\ATC-03-portion-5-slots-50g-ef967a393555d72b582aa934f6dfeca1e95b0f65.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-desktop-chrome\\attachments\\ATC-03-portion-5-slots-50g-ef967a393555d72b582aa934f6dfeca1e95b0f65.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -325,9 +693,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-a95dd6ac27652c6c3ddd",
+              "id": "58b4600fb8a5c556fc87-2d6758fef1c63291531a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 70,
+              "line": 72,
               "column": 3
             },
             {
@@ -344,19 +712,19 @@
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 459,
+                      "duration": 504,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:44.398Z",
+                      "startTime": "2026-10-17T00:21:41.661Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -367,22 +735,22 @@
                         {
                           "name": "ATC-04_invalid_portion_rejected",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-chromium\\attachments\\ATC-04-invalid-portion-rejected-9bb2ececb745fe608b1cdf263cc788f573f8ef3a.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-desktop-chrome\\attachments\\ATC-04-invalid-portion-rejected-9bb2ececb745fe608b1cdf263cc788f573f8ef3a.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -390,9 +758,269 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-6489f241ee996dc858ab",
+              "id": "58b4600fb8a5c556fc87-eceab58fd00cf53776f0",
               "file": "smart-pet-feeder.spec.js",
-              "line": 88,
+              "line": 90,
+              "column": 3
+            },
+            {
+              "title": "ATC-03: 5-slot portion dispenses ~50 g and the setting persists",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.8 g (within 47.5–52.5 g)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 748,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:02.839Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.8 g (within 47.5–52.5 g)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-03_portion_5_slots_50g",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-android-pixel7\\attachments\\ATC-03-portion-5-slots-50g-2d86a5f8241450bbbf647ccbf9f02d9cc92e9e46.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-dd0f1318b41cfb8af610",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 72,
+              "column": 3
+            },
+            {
+              "title": "ATC-04: Invalid portion (99 slots) is rejected, not saved",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "App showed \"INVALID_PORTION: Portion must be 1-10 slots.\"; portion stayed at 1 slot."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 648,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:03.665Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "App showed \"INVALID_PORTION: Portion must be 1-10 slots.\"; portion stayed at 1 slot."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-04_invalid_portion_rejected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-android-pixel7\\attachments\\ATC-04-invalid-portion-rejected-b803634b851cd65ea1e615905669f5152c4c9834.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-712ccd6df8f42ea111a7",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 90,
+              "column": 3
+            },
+            {
+              "title": "ATC-03: 5-slot portion dispenses ~50 g and the setting persists",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 50.3 g (within 47.5–52.5 g)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 934,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:25.562Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 50.3 g (within 47.5–52.5 g)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-03_portion_5_slots_50g",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-iphone-14\\attachments\\ATC-03-portion-5-slots-50g-22f89c7d2c3028253d15b5aa0cb21cdef4a9e290.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-2b69e--g-and-the-setting-persists-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-f86ab1eeaa29cd8e7767",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 72,
+              "column": 3
+            },
+            {
+              "title": "ATC-04: Invalid portion (99 slots) is rejected, not saved",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "App showed \"INVALID_PORTION: Portion must be 1-10 slots.\"; portion stayed at 1 slot."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 735,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:26.549Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "App showed \"INVALID_PORTION: Portion must be 1-10 slots.\"; portion stayed at 1 slot."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-04_invalid_portion_rejected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-iphone-14\\attachments\\ATC-04-invalid-portion-rejected-1569ac70678c310335eeb22e5f3ad34e7079e4fd.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-02-Por-4b5c4-slots-is-rejected-not-saved-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-282ad38519491bf60290",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 90,
               "column": 3
             }
           ]
@@ -400,9 +1028,139 @@
         {
           "title": "AS-03 Scheduled Dispensing (TC-04)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 100,
+          "line": 102,
           "column": 6,
           "specs": [
+            {
+              "title": "ATC-05: Scheduled meal at 08:00 triggers a feed within ±1 minute",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 29.5 g for 3 slots."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:21:42.223Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 29.5 g for 3 slots."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-05_scheduled_feed_triggered",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-desktop-chrome\\attachments\\ATC-05-scheduled-feed-triggered-14fe2762ce5b7704db5d4190c4c5fecf141a9232.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-3918cd26b915592306bc",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 103,
+              "column": 3
+            },
+            {
+              "title": "ATC-05: Scheduled meal at 08:00 triggers a feed within ±1 minute",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.5 g for 3 slots."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1507,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:04.379Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.5 g for 3 slots."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-05_scheduled_feed_triggered",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-android-pixel7\\attachments\\ATC-05-scheduled-feed-triggered-f9c52217d705757fa290849253d2b87e90d00dd1.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-dfc9f7409fcfd1fd2306",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 103,
+              "column": 3
+            },
             {
               "title": "ATC-05: Scheduled meal at 08:00 triggers a feed within ±1 minute",
               "ok": true,
@@ -417,19 +1175,19 @@
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1889,
+                      "duration": 1815,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:44.908Z",
+                      "startTime": "2026-10-17T00:22:27.327Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -440,22 +1198,22 @@
                         {
                           "name": "ATC-05_scheduled_feed_triggered",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-chromium\\attachments\\ATC-05-scheduled-feed-triggered-14fe2762ce5b7704db5d4190c4c5fecf141a9232.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-iphone-14\\attachments\\ATC-05-scheduled-feed-triggered-12ccdffd18b5b67b4beaffdc2024f629a5727979.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-iphone-14\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-iphone-14\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-03-Sch-ebec5-ers-a-feed-within-±1-minute-iphone-14\\trace.zip"
                         }
                       ]
                     }
@@ -463,9 +1221,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-fc491878faf214e48655",
+              "id": "58b4600fb8a5c556fc87-fd5f64d99f69f648867e",
               "file": "smart-pet-feeder.spec.js",
-              "line": 101,
+              "line": 103,
               "column": 3
             }
           ]
@@ -473,7 +1231,7 @@
         {
           "title": "AS-04 Low Food Alert (TC-06)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 129,
+          "line": 131,
           "column": 6,
           "specs": [
             {
@@ -490,19 +1248,19 @@
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 464,
+                      "duration": 913,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:46.864Z",
+                      "startTime": "2026-10-17T00:21:44.452Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -513,22 +1271,22 @@
                         {
                           "name": "ATC-06_low_food_alert_10_percent",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--chromium\\attachments\\ATC-06-low-food-alert-10-percent-5119a0c789e0bc3c473cce16e08e647b33de2dae.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--desktop-chrome\\attachments\\ATC-06-low-food-alert-10-percent-5119a0c789e0bc3c473cce16e08e647b33de2dae.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -536,9 +1294,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-1f912e989835e395ea59",
+              "id": "58b4600fb8a5c556fc87-63540feebd4e82f13818",
               "file": "smart-pet-feeder.spec.js",
-              "line": 130,
+              "line": 132,
               "column": 3
             },
             {
@@ -555,19 +1313,19 @@
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1941,
+                      "duration": 2095,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:47.371Z",
+                      "startTime": "2026-10-17T00:21:45.431Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -578,22 +1336,22 @@
                         {
                           "name": "ATC-07_no_alert_40_percent",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--chromium\\attachments\\ATC-07-no-alert-40-percent-82a39a1c79d57d89e480c9ee661e1037fdbb783a.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--desktop-chrome\\attachments\\ATC-07-no-alert-40-percent-82a39a1c79d57d89e480c9ee661e1037fdbb783a.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -601,9 +1359,269 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-9edd0bc3f26220b90640",
+              "id": "58b4600fb8a5c556fc87-3bbabdf055d4f7f3c4b0",
               "file": "smart-pet-feeder.spec.js",
-              "line": 142,
+              "line": 144,
+              "column": 3
+            },
+            {
+              "title": "ATC-06: Low Food alert appears when hopper drops to 10%",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Food level showed 10% (red bar) and a LOW FOOD notification appeared."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 608,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:05.975Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Food level showed 10% (red bar) and a LOW FOOD notification appeared."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-06_low_food_alert_10_percent",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--android-pixel7\\attachments\\ATC-06-low-food-alert-10-percent-2f6849acacef72ede829e1051035505fdccff78e.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-1fe6017b4069de4d579a",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "ATC-07: No Low Food alert when hopper is at 40%",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Food level showed 40%; no LOW FOOD notification after waiting 1.5 s."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2132,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:06.647Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Food level showed 40%; no LOW FOOD notification after waiting 1.5 s."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-07_no_alert_40_percent",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--android-pixel7\\attachments\\ATC-07-no-alert-40-percent-d18eb40dd366454f42a5b6cada5ab047cda1f148.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-c68554ae8181a9f6191f",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 144,
+              "column": 3
+            },
+            {
+              "title": "ATC-06: Low Food alert appears when hopper drops to 10%",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Food level showed 10% (red bar) and a LOW FOOD notification appeared."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 766,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:29.191Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Food level showed 10% (red bar) and a LOW FOOD notification appeared."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-06_low_food_alert_10_percent",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--iphone-14\\attachments\\ATC-06-low-food-alert-10-percent-e0dec6f62a1b8f88448a63daa599788ab00f5164.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-f02e7-rs-when-hopper-drops-to-10--iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-c0816e47c0ffd5bcb950",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 132,
+              "column": 3
+            },
+            {
+              "title": "ATC-07: No Low Food alert when hopper is at 40%",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Food level showed 40%; no LOW FOOD notification after waiting 1.5 s."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2288,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:30.003Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Food level showed 40%; no LOW FOOD notification after waiting 1.5 s."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-07_no_alert_40_percent",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--iphone-14\\attachments\\ATC-07-no-alert-40-percent-155ad9a79d375ab54696ede4c69952058de5ab37.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-04-Low-fea41-alert-when-hopper-is-at-40--iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-b0296d47122d21093eb6",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 144,
               "column": 3
             }
           ]
@@ -611,7 +1629,7 @@
         {
           "title": "AS-05 Wi-Fi Reconnection (TC-08)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 155,
+          "line": 157,
           "column": 6,
           "specs": [
             {
@@ -628,19 +1646,19 @@
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 8895,
+                      "duration": 9090,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:49.365Z",
+                      "startTime": "2026-10-17T00:21:47.597Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -651,27 +1669,27 @@
                         {
                           "name": "ATC-08a_wifi_dropped",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-chromium\\attachments\\ATC-08a-wifi-dropped-e62331b9c06fa7311dd6ec41a7e9f8d54f751f63.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-desktop-chrome\\attachments\\ATC-08a-wifi-dropped-e62331b9c06fa7311dd6ec41a7e9f8d54f751f63.png"
                         },
                         {
                           "name": "ATC-08b_wifi_reconnected",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-chromium\\attachments\\ATC-08b-wifi-reconnected-aa29f9e9c204c9bae2565b9332890152f53217ed.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-desktop-chrome\\attachments\\ATC-08b-wifi-reconnected-aa29f9e9c204c9bae2565b9332890152f53217ed.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -679,9 +1697,149 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-3bada0b322853a2e3448",
+              "id": "58b4600fb8a5c556fc87-3a7024e6f608f3f9a37a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 156,
+              "line": 158,
+              "column": 3
+            },
+            {
+              "title": "ATC-08: Device auto-reconnects within 60 s with no manual pairing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.4 s after Wi-Fi was restored; manual pairing calls = 0."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9192,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:08.853Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.4 s after Wi-Fi was restored; manual pairing calls = 0."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-08a_wifi_dropped",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-android-pixel7\\attachments\\ATC-08a-wifi-dropped-5c9a477052356dad40eda64564951426c17cbddd.png"
+                        },
+                        {
+                          "name": "ATC-08b_wifi_reconnected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-android-pixel7\\attachments\\ATC-08b-wifi-reconnected-dcceba77a38a73f51a86f62935eb0b037abc724e.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-a2d8f6e49831a9e9502a",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 158,
+              "column": 3
+            },
+            {
+              "title": "ATC-08: Device auto-reconnects within 60 s with no manual pairing",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.6 s after Wi-Fi was restored; manual pairing calls = 0."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9688,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:32.336Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.6 s after Wi-Fi was restored; manual pairing calls = 0."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-08a_wifi_dropped",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-iphone-14\\attachments\\ATC-08a-wifi-dropped-ec6cf5b77c1f1f38aea21cc5cd13424d63a04a93.png"
+                        },
+                        {
+                          "name": "ATC-08b_wifi_reconnected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-iphone-14\\attachments\\ATC-08b-wifi-reconnected-e272d9e0fdab2df7c4557289d7a6a51164d89b06.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-05-Wi--3acbb-60-s-with-no-manual-pairing-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-bb0540565d95c85aa537",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 158,
               "column": 3
             }
           ]
@@ -689,7 +1847,7 @@
         {
           "title": "AS-06 Mobile App Schedule Sync (TC-14)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 176,
+          "line": 178,
           "column": 6,
           "specs": [
             {
@@ -702,61 +1860,61 @@
                   "annotations": [
                     {
                       "type": "sync-time",
-                      "description": "0.50 s"
+                      "description": "0.62 s"
                     },
                     {
                       "type": "actual",
-                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.50 s (limit < 2 s)."
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.62 s (limit < 2 s)."
                     }
                   ],
                   "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
                   "results": [
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1825,
+                      "duration": 1919,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Schedule sync took 0.50 s\n"
+                          "text": "Schedule sync took 0.62 s\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-16T23:57:58.357Z",
+                      "startTime": "2026-10-17T00:21:56.820Z",
                       "annotations": [
                         {
                           "type": "sync-time",
-                          "description": "0.50 s"
+                          "description": "0.62 s"
                         },
                         {
                           "type": "actual",
-                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.50 s (limit < 2 s)."
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.62 s (limit < 2 s)."
                         }
                       ],
                       "attachments": [
                         {
                           "name": "ATC-09_schedule_sync_under_2s",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-chromium\\attachments\\ATC-09-schedule-sync-under-2s-25f29b2fba56a18242dc8946f9fe7f156310132f.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-desktop-chrome\\attachments\\ATC-09-schedule-sync-under-2s-25f29b2fba56a18242dc8946f9fe7f156310132f.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-chromium\\test-finished-1.png"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-desktop-chrome\\test-finished-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-chromium\\video.webm"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-desktop-chrome\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-chromium\\trace.zip"
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-desktop-chrome\\trace.zip"
                         }
                       ]
                     }
@@ -764,9 +1922,991 @@
                   "status": "expected"
                 }
               ],
-              "id": "58b4600fb8a5c556fc87-d791de3f561e2dab8de5",
+              "id": "58b4600fb8a5c556fc87-bcb940dcf755683487bf",
               "file": "smart-pet-feeder.spec.js",
-              "line": 177,
+              "line": 179,
+              "column": 3
+            },
+            {
+              "title": "ATC-09: Schedule change syncs to the device in under 2 seconds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "sync-time",
+                      "description": "0.93 s"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.93 s (limit < 2 s)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2332,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Schedule sync took 0.93 s\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:18.172Z",
+                      "annotations": [
+                        {
+                          "type": "sync-time",
+                          "description": "0.93 s"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.93 s (limit < 2 s)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-09_schedule_sync_under_2s",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-android-pixel7\\attachments\\ATC-09-schedule-sync-under-2s-fb4607637ca95878dc39e285b126c6cc2dd3f1c4.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-b72f6eafc44a2c865bee",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 179,
+              "column": 3
+            },
+            {
+              "title": "ATC-09: Schedule change syncs to the device in under 2 seconds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "sync-time",
+                      "description": "0.97 s"
+                    },
+                    {
+                      "type": "actual",
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.97 s (limit < 2 s)."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2657,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Schedule sync took 0.97 s\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:42.100Z",
+                      "annotations": [
+                        {
+                          "type": "sync-time",
+                          "description": "0.97 s"
+                        },
+                        {
+                          "type": "actual",
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.97 s (limit < 2 s)."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-09_schedule_sync_under_2s",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-iphone-14\\attachments\\ATC-09-schedule-sync-under-2s-00bf310cdee9006663aba95b03bf3ade5a485d07.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-AS-06-Mob-42771-e-device-in-under-2-seconds-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-6705dd6fae504b6f1639",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 179,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Mobile App (PWA)",
+          "file": "smart-pet-feeder.spec.js",
+          "line": 203,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ATC-10: App is installable — valid manifest, icons and active service worker",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Manifest \"PawFeed — Smart Pet Feeder\" (display: standalone) with 3 icons loaded; service worker is activated."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:21:58.807Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Manifest \"PawFeed — Smart Pet Feeder\" (display: standalone) with 3 icons loaded; service worker is activated."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-10_pwa_installable",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-desktop-chrome\\attachments\\ATC-10-pwa-installable-f2a1301115bb5e38a976081884466dd347bb1609.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-737ce10832eed44ce478",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 204,
+              "column": 3
+            },
+            {
+              "title": "ATC-11: App still opens and feeds while the phone is offline",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "With the network turned off, the app loaded from the service-worker cache, switched to on-device mode and dispensed a portion."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 461,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:21:59.250Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "With the network turned off, the app loaded from the service-worker cache, switched to on-device mode and dispensed a portion."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-11_offline_mode",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-desktop-chrome\\attachments\\ATC-11-offline-mode-48eb0b37914149007d25b9775c7510bf28f368fa.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-02a208031a2df8ba5bd1",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 226,
+              "column": 3
+            },
+            {
+              "title": "ATC-10: App is installable — valid manifest, icons and active service worker",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Manifest \"PawFeed — Smart Pet Feeder\" (display: standalone) with 3 icons loaded; service worker is activated."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 454,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:20.574Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Manifest \"PawFeed — Smart Pet Feeder\" (display: standalone) with 3 icons loaded; service worker is activated."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-10_pwa_installable",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-android-pixel7\\attachments\\ATC-10-pwa-installable-c8a08e55f2f99f72044528f5a4bfc0b7b0af6817.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-bbb4349f1626cf712350",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 204,
+              "column": 3
+            },
+            {
+              "title": "ATC-11: App still opens and feeds while the phone is offline",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "With the network turned off, the app loaded from the service-worker cache, switched to on-device mode and dispensed a portion."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 567,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:21.072Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "With the network turned off, the app loaded from the service-worker cache, switched to on-device mode and dispensed a portion."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-11_offline_mode",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-android-pixel7\\attachments\\ATC-11-offline-mode-7ec528de19d0f4decc4b1d7882fba83a3d989bb4.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-b0f9d1a137ec53c29059",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 226,
+              "column": 3
+            },
+            {
+              "title": "ATC-10: App is installable — valid manifest, icons and active service worker",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Manifest \"PawFeed — Smart Pet Feeder\" (display: standalone) with 3 icons loaded; service worker is activated."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 652,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:44.815Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Manifest \"PawFeed — Smart Pet Feeder\" (display: standalone) with 3 icons loaded; service worker is activated."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-10_pwa_installable",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-iphone-14\\attachments\\ATC-10-pwa-installable-80c1a50b1c9f7f4ba4122898e83b6984616d2f87.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-57b09-s-and-active-service-worker-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-d5685af6e1bc8dbc8377",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 204,
+              "column": 3
+            },
+            {
+              "title": "ATC-11: App still opens and feeds while the phone is offline",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "With the network turned off, the app loaded from the service-worker cache, switched to on-device mode and dispensed a portion."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1013,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:45.523Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "With the network turned off, the app loaded from the service-worker cache, switched to on-device mode and dispensed a portion."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-11_offline_mode",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-iphone-14\\attachments\\ATC-11-offline-mode-df258a0b1be51100b5bf55dc50ad17aad2cd1df8.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Mobile-Ap-354b9--while-the-phone-is-offline-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-8161498e21138651690a",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 226,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Hosted on Vercel (no device API)",
+          "file": "smart-pet-feeder.spec.js",
+          "line": 244,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ATC-12: Hosted app runs the feeder on the device and keeps data after reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 522,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:21:59.761Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-12_hosted_on_device_mode",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-desktop-chrome\\attachments\\ATC-12-hosted-on-device-mode-dab41941e6831c38d91fb57f3e2fd3243bf8087d.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-7dce30a5f964ee98750e",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 248,
+              "column": 3
+            },
+            {
+              "title": "ATC-12: Hosted app runs the feeder on the device and keeps data after reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.1 g and still showed 1 feed after reload."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 600,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:21.695Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.1 g and still showed 1 feed after reload."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-12_hosted_on_device_mode",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-android-pixel7\\attachments\\ATC-12-hosted-on-device-mode-17704bfd333588509575af5ec1f4122d441addfb.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-edcdc8be38d7f5e8b2b7",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 248,
+              "column": 3
+            },
+            {
+              "title": "ATC-12: Hosted app runs the feeder on the device and keeps data after reload",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 898,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:46.598Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-12_hosted_on_device_mode",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-iphone-14\\attachments\\ATC-12-hosted-on-device-mode-e5c397f5589b0951cbdcfe0b7566ea4f1c56b8d0.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Hosted-on-a3a75-and-keeps-data-after-reload-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-a38db60bb87cc47e3c7b",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 248,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Responsive layout",
+          "file": "smart-pet-feeder.spec.js",
+          "line": 268,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ATC-13: Layout fits the screen with no sideways scrolling and a tappable Feed button",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Viewport 1280×900: page width 1280 px fits 1280 px; Feed Now button 153×52 px and visible."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 372,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:00.332Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Viewport 1280×900: page width 1280 px fits 1280 px; Feed Now button 153×52 px and visible."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-13_responsive_layout",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-desktop-chrome\\attachments\\ATC-13-responsive-layout-b4b50f23a2f43d5335dbf98cbec7a7367910c5d2.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-ab4c362fa4228e08c20c",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 269,
+              "column": 3
+            },
+            {
+              "title": "ATC-13: Layout fits the screen with no sideways scrolling and a tappable Feed button",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Viewport 412×839: page width 412 px fits 412 px; Feed Now button 362×52 px and visible."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 478,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:22.348Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Viewport 412×839: page width 412 px fits 412 px; Feed Now button 362×52 px and visible."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-13_responsive_layout",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-android-pixel7\\attachments\\ATC-13-responsive-layout-151f50c25a946d71a26d80e3e8e60d2c2f8ae5ac.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-54160ac7b556c6f08e0b",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 269,
+              "column": 3
+            },
+            {
+              "title": "ATC-13: Layout fits the screen with no sideways scrolling and a tappable Feed button",
+              "ok": true,
+              "tags": [
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Viewport 390×664: page width 390 px fits 390 px; Feed Now button 340×52 px and visible."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 637,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T00:22:47.555Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Viewport 390×664: page width 390 px fits 390 px; Feed Now button 340×52 px and visible."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-13_responsive_layout",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-iphone-14\\attachments\\ATC-13-responsive-layout-0bc61cdca6570de1c4eb3b2a06d45901992c9f9c.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Responsiv-968b1--and-a-tappable-Feed-button-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-1d07fbb0ae003172fe1c",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 269,
               "column": 3
             }
           ]
@@ -776,9 +2916,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-16T23:57:41.853Z",
-    "duration": 18577.809,
-    "expected": 9,
+    "startTime": "2026-10-17T00:21:38.910Z",
+    "duration": 69534.245,
+    "expected": 39,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
