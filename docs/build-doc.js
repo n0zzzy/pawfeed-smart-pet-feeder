@@ -550,12 +550,13 @@ Platform coverage is 100%: every automated test case runs on desktop, Android an
   <li>Failed Tests: ${stats.unexpected}</li>
   <li>Execution Duration: ${sec(stats.duration)} locally</li>
 </ul>
-<h4>Reports Used</h4>
-<ul>
-  <li><b>Playwright HTML Report</b> — local (<code>npm run report</code>) and live at <a href="${LIVE_URL}/report/">${LIVE_URL.replace('https://', '')}/report</a> (published by the pipeline)</li>
-  <li>GitHub Actions run summary + downloadable artifacts (<code>playwright-report</code>, <code>screenshots</code>)</li>
-  <li>Playwright JSON report (<code>docs/results.json</code>) — used to fill in this document</li>
-</ul>
+<h4>Recommended Reports</h4>
+${table(['Recommended Report', 'Used', 'What this project uses instead'], [
+  ['Allure Report', box(false), '<b>Playwright HTML Report</b> — built into Playwright, with the same per-test detail (steps, screenshots, video, trace) and no extra plugin. Local: <code>npm run report</code>; live: <a href="' + LIVE_URL + '/report/">' + LIVE_URL.replace('https://', '') + '/report</a>'],
+  ['Extent Report', box(false), 'Playwright HTML Report (above). Extent Reports is mainly used with Java/.NET Selenium frameworks (TestNG, NUnit).'],
+  ['Azure DevOps Dashboard', box(false), '<b>GitHub Actions</b> — the code is on GitHub, so build status, run history, the README status badge and downloadable artifacts (<code>playwright-report</code>, <code>screenshots</code>) are shown there.'],
+  ['Power BI Test Dashboard', box(false), '<b>Playwright JSON report</b> (<code>docs/results.json</code>) and the per-platform results table in Section 12. The same JSON file can be imported into Power BI later.'],
+])}
 ${figure('REPORT-02_test_detail.png', 'Playwright HTML report — step-by-step detail of ATC-09 with the recorded sync time', 'width:62%')}
 
 <h2>16. CI/CD Integration Checklist</h2>
