@@ -1,6 +1,6 @@
 // PawFeed service worker: network-first for the app shell so new deploys show up,
 // falls back to the cache when the phone is offline. Device API calls are never cached.
-const CACHE = 'pawfeed-v1';
+const CACHE = 'pawfeed-v2';
 const ASSETS = [
   '/', '/index.html', '/device-core.js', '/manifest.webmanifest',
   '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png',
@@ -20,7 +20,7 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
-  const skip = url.pathname.startsWith('/api/') || url.pathname.startsWith('/report/');
+  const skip = ['/api/', '/report/', '/allure/'].some(p => url.pathname.startsWith(p));
   if (event.request.method !== 'GET' || url.origin !== location.origin || skip) return;
 
   event.respondWith(

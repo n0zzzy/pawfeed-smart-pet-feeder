@@ -4,12 +4,13 @@
 
 QUALITY Final Exam — Russel Carlo T. Manzon, IT233
 
-A web dashboard and installable mobile app (PWA) for the Automatic Smart Pet Feeder, with a
-simulated feeder device and Playwright automation tests based on scenarios AS-01 to AS-06 of the
-"Define Automation Testing" document.
+A web dashboard and installable mobile app (PWA) for the Automatic Smart Pet Feeder, with login,
+a SQLite database, a simulated feeder device and Playwright automation tests based on scenarios
+AS-01 to AS-06 of the "Define Automation Testing" document.
 
 - **Live app:** https://pawfeed-smart-pet-feeder.vercel.app
-- **Live test report:** https://pawfeed-smart-pet-feeder.vercel.app/report/
+- **Live test reports:** [Playwright](https://pawfeed-smart-pet-feeder.vercel.app/report/) · [Allure](https://pawfeed-smart-pet-feeder.vercel.app/allure/)
+- **Demo login:** `testuser` / `Feeder@123`
 - **Test document:** [Software_Automation_Test_Document_Manzon.pdf](Software_Automation_Test_Document_Manzon.pdf)
 
 ## Install the mobile app
@@ -28,23 +29,29 @@ npm start            # open http://localhost:3000
 
 ## Run the tests
 ```
-npm test             # 13 test cases on Desktop Chrome, Android (Pixel 7) and iPhone 14 = 39 runs
+npm test             # 16 test cases on Desktop Chrome, Android (Pixel 7) and iPhone 14 = 48 runs
 npm run test:headed  # watch the browser click through each test
 npm run test:ui      # Playwright UI mode
-npm run report       # open the HTML report (screenshots, videos, traces)
+npm run report       # open the Playwright HTML report (screenshots, videos, traces)
+npm run allure       # build the Allure report from the last run
+npm run allure:open  # open the Allure report
 ```
+
+The server stores users, settings, schedules and the feed log in SQLite (`data/pawfeed.db`;
+tests use `data/pawfeed-test.db`). Passwords are stored as scrypt hashes.
 
 Screenshots from every test are saved in `screenshots/` (`android-pixel7/` and `iphone-14/` for the phone runs).
 
 ## CI/CD
 `.github/workflows/ci-cd.yml` runs on every push and pull request:
 1. **Test** — the full suite on all three platforms.
-2. **Deploy** — only on `main` and only if every test passed, deploy to Vercel (with the HTML report at `/report`).
+2. **Deploy** — only on `main` and only if every test passed, deploy to Vercel (with the Playwright report at `/report` and the Allure report at `/allure`).
 3. **Smoke test** — run the `@smoke` tests against the live site.
 
 ## Rebuild the test document (PDF)
 ```
-npm test             # run first, then screenshot the HTML report into screenshots/EVIDENCE-*.png
+npm test             # run first, then screenshot the terminal / HTML report into screenshots/EVIDENCE-*.png
+npm run allure       # build the Allure report of that run
 npm run doc          # writes Software_Automation_Test_Document_Manzon.pdf from that run
 ```
 
@@ -64,3 +71,6 @@ npm run doc          # writes Software_Automation_Test_Document_Manzon.pdf from 
 | ATC-11 | App opens and feeds while offline | Mobile app |
 | ATC-12 | Hosted app works without a server API (Vercel) | Deployment |
 | ATC-13 | Layout fits phone screens, Feed button tappable | Mobile app |
+| ATC-14 | Verify successful login → dashboard displayed | Login (template AT-001) |
+| ATC-15 | Login with a wrong password is rejected | Login (template AT-002) |
+| ATC-16 | Settings, feeds and accounts are stored in SQLite | Database |

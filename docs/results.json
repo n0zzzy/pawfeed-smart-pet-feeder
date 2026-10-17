@@ -10,7 +10,7 @@
     "failOnFlakyTests": false,
     "forbidOnly": false,
     "fullyParallel": false,
-    "globalSetup": null,
+    "globalSetup": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests\\global-setup.js",
     "globalTeardown": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\tests\\global-teardown.js",
     "globalTimeout": 0,
     "grep": {},
@@ -203,6 +203,12 @@
         {
           "outputFile": "docs/results.json"
         }
+      ],
+      [
+        "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        {
+          "resultsDir": "allure-results"
+        }
       ]
     ],
     "reportSlowTests": {
@@ -216,9 +222,12 @@
     "version": "1.64.1",
     "workers": 1,
     "webServer": {
-      "command": "node server.js",
+      "command": "node --disable-warning=ExperimentalWarning server.js",
       "url": "http://localhost:3000",
-      "reuseExistingServer": true
+      "reuseExistingServer": false,
+      "env": {
+        "PAWFEED_DB": "data/pawfeed-test.db"
+      }
     }
   },
   "suites": [
@@ -232,7 +241,7 @@
         {
           "title": "AS-01 Manual Feed Trigger (TC-02)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 37,
+          "line": 61,
           "column": 6,
           "specs": [
             {
@@ -245,7 +254,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 10.2 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -256,16 +265,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 641,
+                      "duration": 730,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:39.528Z",
+                      "startTime": "2026-10-17T05:12:54.251Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 10.2 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
@@ -297,7 +306,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-94dad84cdabbd9392846",
               "file": "smart-pet-feeder.spec.js",
-              "line": 38,
+              "line": 62,
               "column": 3
             },
             {
@@ -321,12 +330,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 544,
+                      "duration": 674,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:40.349Z",
+                      "startTime": "2026-10-17T05:12:55.145Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -362,7 +371,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-9b1ad96ede14e440cb5b",
               "file": "smart-pet-feeder.spec.js",
-              "line": 55,
+              "line": 79,
               "column": 3
             },
             {
@@ -375,7 +384,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 9.9 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -386,16 +395,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 686,
+                      "duration": 799,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:01.300Z",
+                      "startTime": "2026-10-17T05:13:18.933Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 9.9 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
@@ -427,7 +436,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-40711d856eb781607e19",
               "file": "smart-pet-feeder.spec.js",
-              "line": 38,
+              "line": 62,
               "column": 3
             },
             {
@@ -451,12 +460,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 622,
+                      "duration": 1063,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:02.148Z",
+                      "startTime": "2026-10-17T05:13:19.894Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -492,7 +501,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-6e753f99e6b846783259",
               "file": "smart-pet-feeder.spec.js",
-              "line": 55,
+              "line": 79,
               "column": 3
             },
             {
@@ -505,7 +514,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                      "description": "Dispense count went 0 → 1; dispensed 10 g (within 9.5–10.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -516,16 +525,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 933,
+                      "duration": 1330,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:23.349Z",
+                      "startTime": "2026-10-17T05:13:48.541Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Dispense count went 0 → 1; dispensed 10.1 g (within 9.5–10.5 g)."
+                          "description": "Dispense count went 0 → 1; dispensed 10 g (within 9.5–10.5 g)."
                         }
                       ],
                       "attachments": [
@@ -557,7 +566,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-312d386697a80f07cc74",
               "file": "smart-pet-feeder.spec.js",
-              "line": 38,
+              "line": 62,
               "column": 3
             },
             {
@@ -581,12 +590,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 959,
+                      "duration": 1309,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:24.546Z",
+                      "startTime": "2026-10-17T05:13:50.466Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -622,7 +631,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-0eb9d558722679de1494",
               "file": "smart-pet-feeder.spec.js",
-              "line": 55,
+              "line": 79,
               "column": 3
             }
           ]
@@ -630,7 +639,7 @@
         {
           "title": "AS-02 Portion Size Configuration (TC-03)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 71,
+          "line": 95,
           "column": 6,
           "specs": [
             {
@@ -643,7 +652,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.4 g (within 47.5–52.5 g)."
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 50.4 g (within 47.5–52.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -654,16 +663,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 660,
+                      "duration": 773,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:40.948Z",
+                      "startTime": "2026-10-17T05:12:55.873Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.4 g (within 47.5–52.5 g)."
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 50.4 g (within 47.5–52.5 g)."
                         }
                       ],
                       "attachments": [
@@ -695,7 +704,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-2d6758fef1c63291531a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 72,
+              "line": 96,
               "column": 3
             },
             {
@@ -719,12 +728,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 504,
+                      "duration": 678,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:41.661Z",
+                      "startTime": "2026-10-17T05:12:56.701Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -760,7 +769,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-eceab58fd00cf53776f0",
               "file": "smart-pet-feeder.spec.js",
-              "line": 90,
+              "line": 114,
               "column": 3
             },
             {
@@ -773,7 +782,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.8 g (within 47.5–52.5 g)."
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 49.1 g (within 47.5–52.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -784,16 +793,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 748,
+                      "duration": 931,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:02.839Z",
+                      "startTime": "2026-10-17T05:13:21.041Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.8 g (within 47.5–52.5 g)."
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 49.1 g (within 47.5–52.5 g)."
                         }
                       ],
                       "attachments": [
@@ -825,7 +834,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-dd0f1318b41cfb8af610",
               "file": "smart-pet-feeder.spec.js",
-              "line": 72,
+              "line": 96,
               "column": 3
             },
             {
@@ -849,12 +858,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 648,
+                      "duration": 952,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:03.665Z",
+                      "startTime": "2026-10-17T05:13:22.054Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -890,7 +899,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-712ccd6df8f42ea111a7",
               "file": "smart-pet-feeder.spec.js",
-              "line": 90,
+              "line": 114,
               "column": 3
             },
             {
@@ -903,7 +912,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Portion saved and still 5 slots after page reload; dispensed 50.3 g (within 47.5–52.5 g)."
+                      "description": "Portion saved and still 5 slots after page reload; dispensed 50.2 g (within 47.5–52.5 g)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -914,16 +923,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 934,
+                      "duration": 1544,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:25.562Z",
+                      "startTime": "2026-10-17T05:13:51.838Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Portion saved and still 5 slots after page reload; dispensed 50.3 g (within 47.5–52.5 g)."
+                          "description": "Portion saved and still 5 slots after page reload; dispensed 50.2 g (within 47.5–52.5 g)."
                         }
                       ],
                       "attachments": [
@@ -955,7 +964,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-f86ab1eeaa29cd8e7767",
               "file": "smart-pet-feeder.spec.js",
-              "line": 72,
+              "line": 96,
               "column": 3
             },
             {
@@ -979,12 +988,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 735,
+                      "duration": 1190,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:26.549Z",
+                      "startTime": "2026-10-17T05:13:53.450Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1020,7 +1029,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-282ad38519491bf60290",
               "file": "smart-pet-feeder.spec.js",
-              "line": 90,
+              "line": 114,
               "column": 3
             }
           ]
@@ -1028,7 +1037,7 @@
         {
           "title": "AS-03 Scheduled Dispensing (TC-04)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 102,
+          "line": 126,
           "column": 6,
           "specs": [
             {
@@ -1041,7 +1050,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 29.5 g for 3 slots."
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.3 g for 3 slots."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1052,16 +1061,16 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2119,
+                      "duration": 1582,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:42.223Z",
+                      "startTime": "2026-10-17T05:12:57.429Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 29.5 g for 3 slots."
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.3 g for 3 slots."
                         }
                       ],
                       "attachments": [
@@ -1093,7 +1102,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-3918cd26b915592306bc",
               "file": "smart-pet-feeder.spec.js",
-              "line": 103,
+              "line": 127,
               "column": 3
             },
             {
@@ -1106,7 +1115,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.5 g for 3 slots."
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.4 g for 3 slots."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1117,16 +1126,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1507,
+                      "duration": 1835,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:04.379Z",
+                      "startTime": "2026-10-17T05:13:23.080Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.5 g for 3 slots."
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.4 g for 3 slots."
                         }
                       ],
                       "attachments": [
@@ -1158,7 +1167,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-dfc9f7409fcfd1fd2306",
               "file": "smart-pet-feeder.spec.js",
-              "line": 103,
+              "line": 127,
               "column": 3
             },
             {
@@ -1171,7 +1180,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 29.8 g for 3 slots."
+                      "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.6 g for 3 slots."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1182,16 +1191,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1815,
+                      "duration": 2441,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:27.327Z",
+                      "startTime": "2026-10-17T05:13:54.701Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 29.8 g for 3 slots."
+                          "description": "SCHEDULED feed logged at 08:00:00 (0 s from target, within ±60 s); dispensed 30.6 g for 3 slots."
                         }
                       ],
                       "attachments": [
@@ -1223,7 +1232,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-fd5f64d99f69f648867e",
               "file": "smart-pet-feeder.spec.js",
-              "line": 103,
+              "line": 127,
               "column": 3
             }
           ]
@@ -1231,7 +1240,7 @@
         {
           "title": "AS-04 Low Food Alert (TC-06)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 131,
+          "line": 155,
           "column": 6,
           "specs": [
             {
@@ -1255,12 +1264,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 913,
+                      "duration": 672,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:44.452Z",
+                      "startTime": "2026-10-17T05:12:59.078Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1296,7 +1305,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-63540feebd4e82f13818",
               "file": "smart-pet-feeder.spec.js",
-              "line": 132,
+              "line": 156,
               "column": 3
             },
             {
@@ -1320,12 +1329,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2095,
+                      "duration": 2198,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:45.431Z",
+                      "startTime": "2026-10-17T05:12:59.801Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1361,7 +1370,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-3bbabdf055d4f7f3c4b0",
               "file": "smart-pet-feeder.spec.js",
-              "line": 144,
+              "line": 168,
               "column": 3
             },
             {
@@ -1385,12 +1394,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 608,
+                      "duration": 811,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:05.975Z",
+                      "startTime": "2026-10-17T05:13:25.003Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1426,7 +1435,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-1fe6017b4069de4d579a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 132,
+              "line": 156,
               "column": 3
             },
             {
@@ -1450,12 +1459,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2132,
+                      "duration": 2370,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:06.647Z",
+                      "startTime": "2026-10-17T05:13:25.874Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1491,7 +1500,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-c68554ae8181a9f6191f",
               "file": "smart-pet-feeder.spec.js",
-              "line": 144,
+              "line": 168,
               "column": 3
             },
             {
@@ -1515,12 +1524,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 766,
+                      "duration": 1888,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:29.191Z",
+                      "startTime": "2026-10-17T05:13:57.235Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1556,7 +1565,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-c0816e47c0ffd5bcb950",
               "file": "smart-pet-feeder.spec.js",
-              "line": 132,
+              "line": 156,
               "column": 3
             },
             {
@@ -1580,12 +1589,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2288,
+                      "duration": 2915,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:30.003Z",
+                      "startTime": "2026-10-17T05:13:59.276Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1621,7 +1630,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-b0296d47122d21093eb6",
               "file": "smart-pet-feeder.spec.js",
-              "line": 144,
+              "line": 168,
               "column": 3
             }
           ]
@@ -1629,7 +1638,7 @@
         {
           "title": "AS-05 Wi-Fi Reconnection (TC-08)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 157,
+          "line": 181,
           "column": 6,
           "specs": [
             {
@@ -1653,12 +1662,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9090,
+                      "duration": 9226,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:47.597Z",
+                      "startTime": "2026-10-17T05:13:02.058Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1699,7 +1708,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-3a7024e6f608f3f9a37a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 158,
+              "line": 182,
               "column": 3
             },
             {
@@ -1723,12 +1732,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9192,
+                      "duration": 9445,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:08.853Z",
+                      "startTime": "2026-10-17T05:13:28.324Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -1769,7 +1778,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-a2d8f6e49831a9e9502a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 158,
+              "line": 182,
               "column": 3
             },
             {
@@ -1782,7 +1791,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.6 s after Wi-Fi was restored; manual pairing calls = 0."
+                      "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.4 s after Wi-Fi was restored; manual pairing calls = 0."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1793,16 +1802,16 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 9688,
+                      "duration": 10165,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:32.336Z",
+                      "startTime": "2026-10-17T05:14:02.255Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.6 s after Wi-Fi was restored; manual pairing calls = 0."
+                          "description": "Status went DISCONNECTED → RECONNECTING → CONNECTED in 3.4 s after Wi-Fi was restored; manual pairing calls = 0."
                         }
                       ],
                       "attachments": [
@@ -1839,7 +1848,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-bb0540565d95c85aa537",
               "file": "smart-pet-feeder.spec.js",
-              "line": 158,
+              "line": 182,
               "column": 3
             }
           ]
@@ -1847,7 +1856,7 @@
         {
           "title": "AS-06 Mobile App Schedule Sync (TC-14)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 178,
+          "line": 202,
           "column": 6,
           "specs": [
             {
@@ -1860,11 +1869,11 @@
                   "annotations": [
                     {
                       "type": "sync-time",
-                      "description": "0.62 s"
+                      "description": "0.82 s"
                     },
                     {
                       "type": "actual",
-                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.62 s (limit < 2 s)."
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.82 s (limit < 2 s)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1875,24 +1884,24 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1919,
+                      "duration": 2325,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Schedule sync took 0.62 s\n"
+                          "text": "Schedule sync took 0.82 s\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:56.820Z",
+                      "startTime": "2026-10-17T05:13:11.415Z",
                       "annotations": [
                         {
                           "type": "sync-time",
-                          "description": "0.62 s"
+                          "description": "0.82 s"
                         },
                         {
                           "type": "actual",
-                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.62 s (limit < 2 s)."
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.82 s (limit < 2 s)."
                         }
                       ],
                       "attachments": [
@@ -1924,7 +1933,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-bcb940dcf755683487bf",
               "file": "smart-pet-feeder.spec.js",
-              "line": 179,
+              "line": 203,
               "column": 3
             },
             {
@@ -1937,11 +1946,11 @@
                   "annotations": [
                     {
                       "type": "sync-time",
-                      "description": "0.93 s"
+                      "description": "1.14 s"
                     },
                     {
                       "type": "actual",
-                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.93 s (limit < 2 s)."
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 1.14 s (limit < 2 s)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -1952,24 +1961,24 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2332,
+                      "duration": 2711,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Schedule sync took 0.93 s\n"
+                          "text": "Schedule sync took 1.14 s\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:18.172Z",
+                      "startTime": "2026-10-17T05:13:37.922Z",
                       "annotations": [
                         {
                           "type": "sync-time",
-                          "description": "0.93 s"
+                          "description": "1.14 s"
                         },
                         {
                           "type": "actual",
-                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.93 s (limit < 2 s)."
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 1.14 s (limit < 2 s)."
                         }
                       ],
                       "attachments": [
@@ -2001,7 +2010,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-b72f6eafc44a2c865bee",
               "file": "smart-pet-feeder.spec.js",
-              "line": 179,
+              "line": 203,
               "column": 3
             },
             {
@@ -2014,11 +2023,11 @@
                   "annotations": [
                     {
                       "type": "sync-time",
-                      "description": "0.97 s"
+                      "description": "0.68 s"
                     },
                     {
                       "type": "actual",
-                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.97 s (limit < 2 s)."
+                      "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.68 s (limit < 2 s)."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -2029,24 +2038,24 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2657,
+                      "duration": 3997,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Schedule sync took 0.97 s\n"
+                          "text": "Schedule sync took 0.68 s\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:42.100Z",
+                      "startTime": "2026-10-17T05:14:12.510Z",
                       "annotations": [
                         {
                           "type": "sync-time",
-                          "description": "0.97 s"
+                          "description": "0.68 s"
                         },
                         {
                           "type": "actual",
-                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.97 s (limit < 2 s)."
+                          "description": "Schedule changed 08:00:00 → 18:30:00 and showed \"Synced to device\" after 0.68 s (limit < 2 s)."
                         }
                       ],
                       "attachments": [
@@ -2078,7 +2087,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-6705dd6fae504b6f1639",
               "file": "smart-pet-feeder.spec.js",
-              "line": 179,
+              "line": 203,
               "column": 3
             }
           ]
@@ -2086,7 +2095,7 @@
         {
           "title": "Mobile App (PWA)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 203,
+          "line": 227,
           "column": 6,
           "specs": [
             {
@@ -2112,12 +2121,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 397,
+                      "duration": 613,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:58.807Z",
+                      "startTime": "2026-10-17T05:13:13.815Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2153,7 +2162,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-737ce10832eed44ce478",
               "file": "smart-pet-feeder.spec.js",
-              "line": 204,
+              "line": 228,
               "column": 3
             },
             {
@@ -2179,12 +2188,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 461,
+                      "duration": 577,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:59.250Z",
+                      "startTime": "2026-10-17T05:13:14.474Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2220,7 +2229,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-02a208031a2df8ba5bd1",
               "file": "smart-pet-feeder.spec.js",
-              "line": 226,
+              "line": 250,
               "column": 3
             },
             {
@@ -2246,12 +2255,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 454,
+                      "duration": 716,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:20.574Z",
+                      "startTime": "2026-10-17T05:13:40.724Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2287,7 +2296,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-bbb4349f1626cf712350",
               "file": "smart-pet-feeder.spec.js",
-              "line": 204,
+              "line": 228,
               "column": 3
             },
             {
@@ -2313,12 +2322,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 567,
+                      "duration": 1113,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:21.072Z",
+                      "startTime": "2026-10-17T05:13:41.515Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2354,7 +2363,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-b0f9d1a137ec53c29059",
               "file": "smart-pet-feeder.spec.js",
-              "line": 226,
+              "line": 250,
               "column": 3
             },
             {
@@ -2380,12 +2389,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 652,
+                      "duration": 1540,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:44.815Z",
+                      "startTime": "2026-10-17T05:14:16.591Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2421,7 +2430,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-d5685af6e1bc8dbc8377",
               "file": "smart-pet-feeder.spec.js",
-              "line": 204,
+              "line": 228,
               "column": 3
             },
             {
@@ -2447,12 +2456,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1013,
+                      "duration": 2023,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:45.523Z",
+                      "startTime": "2026-10-17T05:14:18.203Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2488,7 +2497,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-8161498e21138651690a",
               "file": "smart-pet-feeder.spec.js",
-              "line": 226,
+              "line": 250,
               "column": 3
             }
           ]
@@ -2496,7 +2505,7 @@
         {
           "title": "Hosted on Vercel (no device API)",
           "file": "smart-pet-feeder.spec.js",
-          "line": 244,
+          "line": 268,
           "column": 6,
           "specs": [
             {
@@ -2522,12 +2531,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 522,
+                      "duration": 743,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:21:59.761Z",
+                      "startTime": "2026-10-17T05:13:15.099Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2563,7 +2572,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-7dce30a5f964ee98750e",
               "file": "smart-pet-feeder.spec.js",
-              "line": 248,
+              "line": 272,
               "column": 3
             },
             {
@@ -2578,7 +2587,7 @@
                   "annotations": [
                     {
                       "type": "actual",
-                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.1 g and still showed 1 feed after reload."
+                      "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
                     }
                   ],
                   "expectedStatus": "passed",
@@ -2589,16 +2598,16 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 600,
+                      "duration": 1383,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:21.695Z",
+                      "startTime": "2026-10-17T05:13:42.727Z",
                       "annotations": [
                         {
                           "type": "actual",
-                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 10.1 g and still showed 1 feed after reload."
+                          "description": "With /api unavailable (like on Vercel) the app ran in on-device mode, dispensed 9.9 g and still showed 1 feed after reload."
                         }
                       ],
                       "attachments": [
@@ -2630,7 +2639,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-edcdc8be38d7f5e8b2b7",
               "file": "smart-pet-feeder.spec.js",
-              "line": 248,
+              "line": 272,
               "column": 3
             },
             {
@@ -2656,12 +2665,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 898,
+                      "duration": 1505,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:46.598Z",
+                      "startTime": "2026-10-17T05:14:20.311Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2697,7 +2706,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-a38db60bb87cc47e3c7b",
               "file": "smart-pet-feeder.spec.js",
-              "line": 248,
+              "line": 272,
               "column": 3
             }
           ]
@@ -2705,7 +2714,7 @@
         {
           "title": "Responsive layout",
           "file": "smart-pet-feeder.spec.js",
-          "line": 268,
+          "line": 292,
           "column": 6,
           "specs": [
             {
@@ -2731,12 +2740,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 372,
+                      "duration": 593,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:00.332Z",
+                      "startTime": "2026-10-17T05:13:15.894Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2772,7 +2781,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-ab4c362fa4228e08c20c",
               "file": "smart-pet-feeder.spec.js",
-              "line": 269,
+              "line": 293,
               "column": 3
             },
             {
@@ -2798,12 +2807,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 478,
+                      "duration": 1077,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:22.348Z",
+                      "startTime": "2026-10-17T05:13:44.191Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2839,7 +2848,7 @@
               ],
               "id": "58b4600fb8a5c556fc87-54160ac7b556c6f08e0b",
               "file": "smart-pet-feeder.spec.js",
-              "line": 269,
+              "line": 293,
               "column": 3
             },
             {
@@ -2865,12 +2874,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 637,
+                      "duration": 1155,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-10-17T00:22:47.555Z",
+                      "startTime": "2026-10-17T05:14:21.882Z",
                       "annotations": [
                         {
                           "type": "actual",
@@ -2906,7 +2915,638 @@
               ],
               "id": "58b4600fb8a5c556fc87-1d07fbb0ae003172fe1c",
               "file": "smart-pet-feeder.spec.js",
-              "line": 269,
+              "line": 293,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Login and Authentication",
+          "file": "smart-pet-feeder.spec.js",
+          "line": 312,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ATC-14: Login with valid credentials shows the dashboard",
+              "ok": true,
+              "tags": [
+                "auth",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Login page shown; username \"testuser\" and masked password accepted; after Log in the dashboard opened showing \"👤 testuser\"."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 548,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:13:16.532Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Login page shown; username \"testuser\" and masked password accepted; after Log in the dashboard opened showing \"👤 testuser\"."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-14a_login_page",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-desktop-chrome\\attachments\\ATC-14a-login-page-078f49a4202d2b19c04799be91b0fbcdd7f0e965.png"
+                        },
+                        {
+                          "name": "ATC-14b_dashboard_displayed",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-desktop-chrome\\attachments\\ATC-14b-dashboard-displayed-092be9fcf71c8ef204548fa7af95343ee0bc6dba.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-151ce7e3cc660e51f93d",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 313,
+              "column": 3
+            },
+            {
+              "title": "ATC-15: Login with a wrong password is rejected",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "App showed \"✘ Invalid username or password.\" and stayed on the login page; the dashboard was not shown."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 417,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:13:17.129Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "App showed \"✘ Invalid username or password.\" and stayed on the login page; the dashboard was not shown."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-15_invalid_login_rejected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-desktop-chrome\\attachments\\ATC-15-invalid-login-rejected-f8df5fb3f243fa20e6a7a1643ce2a853ea11fe8e.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-c050d81343620dffc3f9",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 331,
+              "column": 3
+            },
+            {
+              "title": "ATC-14: Login with valid credentials shows the dashboard",
+              "ok": true,
+              "tags": [
+                "auth",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Login page shown; username \"testuser\" and masked password accepted; after Log in the dashboard opened showing \"👤 testuser\"."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 958,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:13:45.383Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Login page shown; username \"testuser\" and masked password accepted; after Log in the dashboard opened showing \"👤 testuser\"."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-14a_login_page",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-android-pixel7\\attachments\\ATC-14a-login-page-2d3435e690c65e3bbf6d8cc915bab65fc7167207.png"
+                        },
+                        {
+                          "name": "ATC-14b_dashboard_displayed",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-android-pixel7\\attachments\\ATC-14b-dashboard-displayed-cf02840a1c5182a0854ddea6fdb3198fb386608e.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-7f37ccb57529898a79c3",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 313,
+              "column": 3
+            },
+            {
+              "title": "ATC-15: Login with a wrong password is rejected",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "App showed \"✘ Invalid username or password.\" and stayed on the login page; the dashboard was not shown."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 515,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:13:46.430Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "App showed \"✘ Invalid username or password.\" and stayed on the login page; the dashboard was not shown."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-15_invalid_login_rejected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-android-pixel7\\attachments\\ATC-15-invalid-login-rejected-fa408207614f011040fa446eb68a37b32faac969.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-f28196698895959282e2",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 331,
+              "column": 3
+            },
+            {
+              "title": "ATC-14: Login with valid credentials shows the dashboard",
+              "ok": true,
+              "tags": [
+                "auth",
+                "smoke"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "Login page shown; username \"testuser\" and masked password accepted; after Log in the dashboard opened showing \"👤 testuser\"."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1198,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:14:23.089Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "Login page shown; username \"testuser\" and masked password accepted; after Log in the dashboard opened showing \"👤 testuser\"."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-14a_login_page",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-iphone-14\\attachments\\ATC-14a-login-page-60b0b338aa1b4a03b387e0b0cc0f783cae662184.png"
+                        },
+                        {
+                          "name": "ATC-14b_dashboard_displayed",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-iphone-14\\attachments\\ATC-14b-dashboard-displayed-54bf4559f7fd93bcb82e1cee23bfbbecc1b5fab6.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-ce328-entials-shows-the-dashboard-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-f78511f8589d7c2324fc",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 313,
+              "column": 3
+            },
+            {
+              "title": "ATC-15: Login with a wrong password is rejected",
+              "ok": true,
+              "tags": [
+                "auth"
+              ],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "App showed \"✘ Invalid username or password.\" and stayed on the login page; the dashboard was not shown."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 781,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:14:24.349Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "App showed \"✘ Invalid username or password.\" and stayed on the login page; the dashboard was not shown."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-15_invalid_login_rejected",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-iphone-14\\attachments\\ATC-15-invalid-login-rejected-a88eb07c997df488fbdcc96543fe5ef4b1550dec.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Login-and-c77c7--wrong-password-is-rejected-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-c5e79622751a025437bf",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 331,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Database (SQLite)",
+          "file": "smart-pet-feeder.spec.js",
+          "line": 344,
+          "column": 6,
+          "specs": [
+            {
+              "title": "ATC-16: Settings, feeds and accounts are stored in the SQLite database",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.5 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "desktop-chrome",
+                  "projectName": "desktop-chrome",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 786,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:13:17.580Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.5 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-16_saved_in_database",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-desktop-chrome\\attachments\\ATC-16-saved-in-database-05d08b7e70fe56da3df04fb8e20cfaef4899c7f0.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-desktop-chrome\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-desktop-chrome\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-desktop-chrome\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-6bb70ded0d4efc9f8661",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 345,
+              "column": 3
+            },
+            {
+              "title": "ATC-16: Settings, feeds and accounts are stored in the SQLite database",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "android-pixel7",
+                  "projectName": "android-pixel7",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 921,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:13:46.983Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 30.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-16_saved_in_database",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-android-pixel7\\attachments\\ATC-16-saved-in-database-84fce1c1a559fcd74dc499a591a2ee4b09db6535.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-android-pixel7\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-android-pixel7\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-android-pixel7\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-fdd427e8a4a25c596637",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 345,
+              "column": 3
+            },
+            {
+              "title": "ATC-16: Settings, feeds and accounts are stored in the SQLite database",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "actual",
+                      "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "iphone-14",
+                  "projectName": "iphone-14",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1227,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-17T05:14:25.165Z",
+                      "annotations": [
+                        {
+                          "type": "actual",
+                          "description": "device row: portion_slots=3, dispense_count=1; feed_log row: MANUAL 3 slots 29.6 g DISPENSED (matches the app); users row stores a scrypt hash, not the plain password."
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "ATC-16_saved_in_database",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-iphone-14\\attachments\\ATC-16-saved-in-database-84d1ed0e72df0dcaf567109187c5df4d8fd25393.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-iphone-14\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-iphone-14\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\windows 11\\finals-quality-smart-pet-feeder\\test-results\\smart-pet-feeder-Database--44360-ored-in-the-SQLite-database-iphone-14\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "58b4600fb8a5c556fc87-ea454ad8ae3dc263ab61",
+              "file": "smart-pet-feeder.spec.js",
+              "line": 345,
               "column": 3
             }
           ]
@@ -2916,9 +3556,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-17T00:21:38.910Z",
-    "duration": 69534.245,
-    "expected": 39,
+    "startTime": "2026-10-17T05:12:53.670Z",
+    "duration": 93052.875,
+    "expected": 48,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

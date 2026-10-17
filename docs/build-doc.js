@@ -42,6 +42,14 @@ const stats = results.stats;
 const executed = stats.expected + stats.unexpected + stats.flaky;
 const passRate = executed ? ((stats.expected / executed) * 100).toFixed(0) : '0';
 
+// Tester screenshots of this run: screenshots/EVIDENCE-*.png, captions in screenshots/evidence.json ({ "file": "caption" }).
+const captions = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'screenshots', 'evidence.json'), 'utf8')); } catch { return {}; }
+})();
+const evidence = fs.readdirSync(path.join(ROOT, 'screenshots'))
+  .filter(f => /^EVIDENCE-.*\.png$/.test(f)).sort()
+  .map(file => ({ file, caption: captions[file] || 'Tester screenshot of the test run' }));
+
 // ---------- static test case definitions (from the Define Automation Testing doc + mobile app) ----------
 const cases = [
   {
@@ -214,6 +222,48 @@ const cases = [
     expected: 'The app fits every screen and the main action is easy to tap.',
     shots: ['ATC-13_responsive_layout.png'], phoneShots: true, actualAll: true,
   },
+  {
+    id: 'ATC-14', at: 'AT-014', module: 'Login & Authentication', maps: 'Login requirement (template AT-001)', priority: 'High',
+    name: 'Verify Successful Login',
+    pre: ['User account exists (stored in the SQLite users table)', 'Application available'],
+    data: [['Username', 'testuser'], ['Password', '********']],
+    steps: [
+      ['Launch Application', 'Login page displayed'],
+      ['Enter Username', 'Username accepted'],
+      ['Enter Password', 'Password accepted (masked)'],
+      ['Click Login', 'Dashboard displayed'],
+    ],
+    expected: 'User successfully logs in and dashboard is displayed.',
+    shots: ['ATC-14a_login_page.png', 'ATC-14b_dashboard_displayed.png'],
+  },
+  {
+    id: 'ATC-15', at: 'AT-015', module: 'Login & Authentication', maps: 'Login requirement (template AT-002)', priority: 'High',
+    name: 'Verify Login with Invalid Credentials',
+    pre: ['User account exists', 'Application available'],
+    data: [['Username', 'testuser'], ['Password', '******** (wrong password)']],
+    steps: [
+      ['Launch Application', 'Login page displayed'],
+      ['Enter Username and a wrong Password', 'Values accepted'],
+      ['Click Login', 'Error “Invalid username or password.” is shown'],
+      ['Check the screen', 'Still on the login page; dashboard not displayed'],
+    ],
+    expected: 'Login is rejected with an error message and the dashboard is not displayed.',
+    shots: ['ATC-15_invalid_login_rejected.png'],
+  },
+  {
+    id: 'ATC-16', at: 'AT-016', module: 'Database (SQLite)', maps: 'Data storage requirement', priority: 'High',
+    name: 'Verify settings, feeds and accounts are stored in the database',
+    pre: ['Server is running with the SQLite test database (data/pawfeed-test.db)', 'User is logged in'],
+    data: [['Database', 'SQLite — tables users, device, schedules, feed_log, notifications'], ['Portion size', '3 slots'], ['Check method', 'Test opens the database file read-only and runs SQL queries']],
+    steps: [
+      ['Save a portion of 3 slots and tap “Feed Now”', 'Portion 3, dispense count 1'],
+      ['Query the device table', 'portion_slots = 3, dispense_count = 1'],
+      ['Query the newest feed_log row', 'DISPENSED, 3 slots, same weight as shown in the app'],
+      ['Query the users table for testuser', 'Password stored as a scrypt hash, not plain text'],
+    ],
+    expected: 'App data is written to the SQLite database and passwords are stored hashed.',
+    shots: ['ATC-16_saved_in_database.png'], serverOnly: true,
+  },
 ];
 
 // ---------- HTML helpers ----------
@@ -325,6 +375,8 @@ const html = `<!doctype html>
   .checks div { margin: 2px 0; }
   .metric td:last-child { font-weight: 700; }
   .page { break-before: page; }
+  .wrap2 { flex-wrap: wrap; }
+  .wrap2 figure { flex: 1 1 45%; }
   table.signoff td { vertical-align: middle; }
   table.signoff td:nth-child(3) { width: 34%; padding: 2px 8px; }
   .sig { height: 0.5in; width: auto; display: block; }
@@ -340,7 +392,7 @@ const html = `<!doctype html>
 <h2>1. Document Information</h2>
 ${table(['Field', 'Details'], [
   ['Project Name', 'Automatic Smart Pet Feeder'],
-  ['Application Name', 'PawFeed — Smart Pet Feeder Web Dashboard &amp; installable Mobile App (PWA)'],
+  ['Application Name', 'PawFeed — Smart Pet Feeder Web Dashboard &amp; installable Mobile App (PWA), with login and a SQLite database'],
   ['Version', '1.0.0'],
   ['Test Cycle', 'Final Exam — Automation Cycle 1'],
   ['Prepared By', 'Russel Carlo T. Manzon (IT233)'],
@@ -357,19 +409,22 @@ ${table(['Field', 'Details'], [
 <i>Define Automation Testing</i> document (AS-01 to AS-06) into real, repeatable Playwright tests that run
 against the Smart Pet Feeder app on <b>desktop and on mobile phones (Android and iPhone)</b>. The tests validate
 the feeder’s key functions — manual feeding, portion accuracy, scheduled dispensing, low-food alerts, Wi-Fi
-reconnection and app-to-device schedule sync — plus the mobile app itself (installable, offline, responsive).
+reconnection and app-to-device schedule sync — plus user login, data storage in a SQLite database, and the mobile
+app itself (installable, offline, responsive).
 The suite runs automatically in a <b>CI/CD pipeline</b> on every code change, and the app is only deployed to
 production when every test passes, reducing regression effort and capturing screenshot evidence of every run.</p>
 
 <h2>3. Scope</h2>
 <h4>In Scope</h4>
 <ul>
+  <li>Login and authentication (valid and invalid credentials)</li>
   <li>Manual Feed (Feed Now) and jam detection</li>
   <li>Portion size configuration and validation</li>
   <li>Scheduled dispensing using a mocked device clock</li>
   <li>Low Food alert notifications (simulated IR sensor)</li>
   <li>Wi-Fi drop and automatic reconnection (simulated network)</li>
   <li>App-to-device schedule synchronization time</li>
+  <li>Data storage in the SQLite database (settings, feed log, user accounts with hashed passwords)</li>
   <li>Mobile app (PWA): installability, offline use, responsive phone layout</li>
   <li>Hosted deployment on Vercel and post-deploy smoke testing of the live site</li>
   <li>Cross-platform execution: Desktop Chrome, Android (Pixel 7) and iPhone 14 (WebKit)</li>
@@ -386,11 +441,11 @@ production when every test passes, reducing regression effort and capturing scre
 ${table(['Component', 'Details'], [
   ['Environment', 'DEV — local Windows 11 PC · CI — GitHub Actions (ubuntu-latest) · PROD — Vercel'],
   ['Application URL', `Local: http://localhost:3000 (started by Playwright <code>webServer</code>) · Live: <a href="${LIVE_URL}">${LIVE_URL}</a>`],
-  ['Database', 'None — device state is kept in memory by the Node.js server (local/CI) or in the browser’s localStorage (Vercel); reset before every test'],
+  ['Database', '<b>SQLite 3.49</b> (Node.js built-in <code>node:sqlite</code>) — app data in <code>data/pawfeed.db</code>, tests use a separate <code>data/pawfeed-test.db</code>; tables <code>users</code>, <code>device</code>, <code>schedules</code>, <code>feed_log</code>, <code>notifications</code>. On Vercel (no server) the data stays in the browser’s localStorage.'],
   ['Browser', 'Chromium (Chrome 156) and WebKit 27.2 (Safari engine), Playwright builds'],
   ['Mobile Device', 'Playwright device emulation: <b>Pixel 7</b> — Android 14, Chrome, 412×839, touch · <b>iPhone 14</b> — iOS Safari (WebKit), 390×664, touch'],
   ['Operating System', 'Windows 11 Pro (10.0.26300) locally · Ubuntu (GitHub Actions) in CI'],
-  ['API Endpoint', 'http://localhost:3000/api (status, feed, portion, schedules, sim/*) · on Vercel the device runs inside the app (no server API)'],
+  ['API Endpoint', 'http://localhost:3000/api (login, status, feed, portion, schedules, sim/*) · on Vercel the device runs inside the app (no server API)'],
   ['Build Version', 'PawFeed 1.0.0 · Node.js v23.8.0 (local) / v22 (CI) · Playwright 1.64.1'],
 ], 'kv')}
 
@@ -409,8 +464,9 @@ ${table(['Component', 'Tool'], [
   ['Mobile Automation', '<b>Playwright device emulation</b> (Pixel 7, iPhone 14). Appium is not needed because the mobile app is a PWA.'],
   ['API Automation', 'Playwright APIRequestContext (device reset, manifest/icon checks)'],
   ['Programming Language', '<b>JavaScript</b> (Node.js)'],
-  ['Build Tool', 'npm (<code>npm test</code>, <code>npm run report</code>, <code>npm run doc</code>)'],
-  ['Reporting', 'Playwright HTML Reporter (screenshots, video, trace) + JSON reporter; report published live at <code>/report</code>'],
+  ['Build Tool', 'npm (<code>npm test</code>, <code>npm run report</code>, <code>npm run allure</code>, <code>npm run doc</code>)'],
+  ['Reporting', '<b>Allure Report</b> 3 (allure-playwright 3.13) + Playwright HTML Reporter (screenshots, video, trace) + JSON reporter; published live at <code>/allure</code> and <code>/report</code>'],
+  ['Database', '<b>SQLite</b> (Node.js <code>node:sqlite</code>); passwords hashed with scrypt'],
   ['CI/CD', '<b>GitHub Actions</b> → <b>Vercel</b> (deploy only after all tests pass)'],
   ['Source Control', `<b>Git + GitHub</b> — <a href="${REPO_URL}">${REPO_URL.replace('https://', '')}</a>`],
 ], 'kv')}
@@ -420,7 +476,9 @@ ${table(['File / Folder', 'Purpose'], [
   ['public/device-core.js', 'Simulated feeder device logic, shared by the server and the browser'],
   ['public/manifest.webmanifest, public/sw.js, public/icons/', 'Mobile app (PWA): install manifest, offline service worker, app icons'],
   ['server.js', 'Node.js server + device API used locally and in CI'],
-  ['tests/smart-pet-feeder.spec.js', 'The 13 automated test cases (ATC-01 – ATC-13)'],
+  ['db.js', 'SQLite database: table schema, scrypt password hashing, load/save of the device data'],
+  ['tests/smart-pet-feeder.spec.js', `The ${cases.length} automated test cases (ATC-01 – ATC-${String(cases.length).padStart(2, '0')})`],
+  ['scripts/allure-report.js', 'Builds the Allure report from <code>allure-results/</code>'],
   ['playwright.config.js', 'Runner config: 3 platform projects, base URL, screenshots/video/trace, reporters'],
   ['.github/workflows/ci-cd.yml', 'CI/CD pipeline: test → deploy to Vercel → smoke-test the live site'],
   ['vercel.json', 'Vercel hosting settings'],
@@ -460,6 +518,7 @@ ${cases.map(caseBlock).join('\n')}
 
 <h2 class="page">10. Test Data Management</h2>
 ${table(['Data Type', 'Source', 'Owner'], [
+  ['User Accounts', 'SQLite <code>users</code> table — demo account <code>testuser</code>, created when the database is first opened; password stored as a scrypt hash', 'QA Team'],
   ['Device state (food level, portion, schedules, logs)', 'Reset through <code>POST /api/sim/reset</code> in <code>beforeEach</code>', 'QA (Playwright hook)'],
   ['Portion sizes, meal times, thresholds', 'Hard-coded in the spec from AS-01 – AS-06', 'QA Team'],
   ['Sensor & hardware inputs (jam, IR food level, Wi-Fi, clock)', 'Device Simulator panel / <code>/api/sim/*</code>', 'QA Team'],
@@ -475,6 +534,8 @@ ${table(['Defect ID', 'Summary', 'Severity', 'Status'], [
   ['ENV-001', 'Playwright took ~3 minutes to stop the app server on Windows after each run. Fixed by adding a global teardown that asks the server to shut down.', 'Low', 'Fixed'],
   ['ENV-002', 'Food-level bar was captured mid-animation, so the screenshot showed a shorter bar than the % value. Fixed by removing the CSS transition.', 'Low', 'Fixed'],
   ['ENV-003', 'Vercel cannot keep the server’s in-memory device state between requests. Fixed by moving the device logic into a shared module that also runs inside the app (covered by ATC-12).', 'Medium', 'Fixed'],
+  ['ENV-004', 'ATC-16 could not open the database because Playwright’s test-file loader cannot <code>require(\'node:sqlite\')</code>. Fixed by loading it with <code>process.getBuiltinModule()</code>.', 'Low', 'Fixed'],
+  ['ENV-005', 'On Windows, Allure report generation sometimes failed with EPERM while renaming a freshly written folder (file briefly locked). Fixed with a script that retries the generation (<code>npm run allure</code>).', 'Low', 'Fixed'],
 ])}
 <p><b>Severity Classification:</b> Critical · High · Medium · Low</p>
 
@@ -498,13 +559,11 @@ ${table(['Test Case', ...PLATFORMS.map(p => p.label)], cases.map(c => [
   `${c.id} — ${esc(c.module)}`, ...PLATFORMS.map(p => tick(((runs[c.id] || {})[p.id] || {}).status)),
 ]), 'matrix')}
 <h4>Execution Evidence</h4>
-<p>Screenshots taken by the tester of the Playwright HTML report (<code>npx playwright show-report</code>) for the run on
-${RUN_AT}: every test case passed on every platform. The same suite also passed in the CI/CD pipeline (Figure 2, Section 16).</p>
-<div class="shots2">
-${figure('EVIDENCE-02a_report_desktop.png', 'Figure 1a — Desktop Chrome: ATC-01 – ATC-13 passed', 'width:100%')}
-${figure('EVIDENCE-02b_report_android_iphone.png', 'Figure 1b — Android (Pixel 7): ATC-01 – ATC-13 passed; iPhone 14 begins', 'width:100%')}
-</div>
-${figure('EVIDENCE-02c_report_iphone.png', 'Figure 1c — iPhone 14 (WebKit): remaining test cases passed', 'width:50%')}
+<p>Screenshots taken by the tester during the run on ${RUN_AT}: every test case passed on every platform.
+The same suite also passed in the CI/CD pipeline (Section 16), and the Allure report of this run is shown in Section 15.</p>
+${evidence.length
+  ? `<div class="shots2 wrap2">${evidence.map((f, i) => figure(f.file, `Figure 1${'abcdefgh'[i]} — ${f.caption}`, 'width:100%')).join('')}</div>`
+  : '<div class="missing">[Tester screenshots of this run not added yet]</div>'}
 
 <h2>13. Automation Coverage</h2>
 ${table(['Module', 'Total TC', 'Automated', 'Coverage %'], [
@@ -517,8 +576,10 @@ ${table(['Module', 'Total TC', 'Automated', 'Coverage %'], [
   ['Mobile App — PWA install &amp; offline', 2, 2, '100%'],
   ['Hosting (Vercel on-device mode)', 1, 1, '100%'],
   ['Responsive UI (phone layouts)', 1, 1, '100%'],
+  ['Login &amp; Authentication', 2, 2, '100%'],
+  ['Database (SQLite)', 1, 1, '100%'],
   ['Physical / Hardware (TC-05, TC-11, TC-13)', 3, 0, '0% (manual only)'],
-  ['<b>Total</b>', '<b>16</b>', '<b>13</b>', '<b>81%</b>'],
+  ['<b>Total</b>', '<b>19</b>', '<b>16</b>', '<b>84%</b>'],
 ])}
 <div class="note">ATC-02 covers the software side of TC-05 (jam is detected and the motor stops). The physical anti-jam force,
 cord integrity and lid-lock shake test need real hardware, so they stay manual as stated in the Define Automation Testing document.
@@ -545,38 +606,43 @@ Platform coverage is 100%: every automated test case runs on desktop, Android an
 <ul>
   <li>Build Status: shown on every commit in GitHub Actions (<a href="${REPO_URL}/actions">${REPO_URL.replace('https://', '')}/actions</a>)</li>
   <li>Execution Status: ${stats.expected}/${executed} passed</li>
-  <li>Defect Trend: 0 open; 4 fixed (1 UI bug, 3 environment issues)</li>
-  <li>Automation Coverage: 13 of 16 test cases (81%), on 3 platforms</li>
+  <li>Defect Trend: 0 open; 6 fixed (1 UI bug, 5 environment issues)</li>
+  <li>Automation Coverage: 16 of 19 test cases (84%), on 3 platforms</li>
   <li>Failed Tests: ${stats.unexpected}</li>
   <li>Execution Duration: ${sec(stats.duration)} locally</li>
 </ul>
 <h4>Recommended Reports</h4>
-${table(['Recommended Report', 'Used', 'What this project uses instead'], [
-  ['Allure Report', box(false), '<b>Playwright HTML Report</b> — built into Playwright, with the same per-test detail (steps, screenshots, video, trace) and no extra plugin. Local: <code>npm run report</code>; live: <a href="' + LIVE_URL + '/report/">' + LIVE_URL.replace('https://', '') + '/report</a>'],
-  ['Extent Report', box(false), 'Playwright HTML Report (above). Extent Reports is mainly used with Java/.NET Selenium frameworks (TestNG, NUnit).'],
-  ['Azure DevOps Dashboard', box(false), '<b>GitHub Actions</b> — the code is on GitHub, so build status, run history, the README status badge and downloadable artifacts (<code>playwright-report</code>, <code>screenshots</code>) are shown there.'],
-  ['Power BI Test Dashboard', box(false), '<b>Playwright JSON report</b> (<code>docs/results.json</code>) and the per-platform results table in Section 12. The same JSON file can be imported into Power BI later.'],
+${table(['Recommended Report', 'Used', 'How it is covered in this project'], [
+  ['Allure Report', box(true), '<b>Allure Report 3</b> through the official <code>allure-playwright</code> reporter: summary, every test with its steps, screenshots, video and trace. Built with <code>npm run allure</code>, published by the pipeline at <a href="' + LIVE_URL + '/allure/">' + LIVE_URL.replace('https://', '') + '/allure</a>.'],
+  ['Extent Report', box(false), 'Not used — Allure and the Playwright HTML report already give the same detail. Extent Reports is mainly used with Java/.NET Selenium frameworks (TestNG, NUnit).'],
+  ['Azure DevOps Dashboard', box(false), 'Covered by <b>GitHub Actions</b> — the code is on GitHub, so build status, run history, the README status badge and downloadable artifacts (<code>playwright-report</code>, <code>allure-report</code>, <code>screenshots</code>) are shown there.'],
+  ['Power BI Test Dashboard', box(false), 'Covered by the <b>Playwright JSON report</b> (<code>docs/results.json</code>) and the per-platform results table in Section 12. The same JSON file can be imported into Power BI later.'],
 ])}
-${figure('REPORT-02_test_detail.png', 'Playwright HTML report — step-by-step detail of ATC-09 with the recorded sync time', 'width:62%')}
+<p class="muted">Also kept from earlier: the <b>Playwright HTML Report</b> (<code>npm run report</code>, live at <a href="${LIVE_URL}/report/">/report</a>), <b>GitHub Actions</b> run summaries and the <b>JSON report</b>.</p>
+<div class="shots2">
+${figure('ALLURE-01_overview.png', `Figure 2 — Allure Report: ${stats.expected} of ${executed} passed (100%), grouped by test suite`, 'width:100%')}
+${figure('ALLURE-02_login_test.png', 'Figure 3 — Allure Report: ATC-14 “Verify Successful Login” with its test steps', 'width:100%')}
+</div>
+${figure('REPORT-02_test_detail.png', 'Figure 4 — Playwright HTML report — step-by-step detail of ATC-09 with the recorded sync time', 'width:62%')}
 
 <h2>16. CI/CD Integration Checklist</h2>
 <div class="pipeline">
   <div><b>1. Push / Pull Request</b>Code pushed to GitHub (main)</div><span class="arrow">→</span>
   <div><b>2. Test</b>${cases.length} test cases × 3 platforms on Ubuntu</div><span class="arrow">→</span>
   <div><b>3. Quality gate</b>Deploy job runs only if every test passed</div><span class="arrow">→</span>
-  <div><b>4. Deploy</b>App + test report to Vercel production</div><span class="arrow">→</span>
+  <div><b>4. Deploy</b>App + Playwright &amp; Allure reports to Vercel</div><span class="arrow">→</span>
   <div><b>5. Smoke test</b>@smoke tests against the live URL</div>
 </div>
 ${table(['Item', 'Status', 'Notes'], [
   ['Source Code in Git', box(true), `GitHub: <a href="${REPO_URL}">${REPO_URL.replace('https://', '')}</a>`],
   ['Build Pipeline Configured', box(true), 'GitHub Actions workflow <code>.github/workflows/ci-cd.yml</code>'],
   ['Automated Execution Triggered', box(true), 'Runs on every push and pull request to <code>main</code> (and manually)'],
-  ['Test Reports Published', box(true), `HTML report + screenshots as run artifacts, and live at <a href="${LIVE_URL}/report/">/report</a>`],
+  ['Test Reports Published', box(true), `Playwright HTML report, Allure report and screenshots as run artifacts, and live at <a href="${LIVE_URL}/report/">/report</a> and <a href="${LIVE_URL}/allure/">/allure</a>`],
   ['Notifications Enabled', box(true), 'GitHub emails the repository owner when a workflow run fails'],
   ['Quality Gates Configured', box(true), 'Deploy needs the test job to pass; the live site is then smoke-tested'],
 ])}
-${figure('CI-01_github_actions_run.png', 'Figure 2 — GitHub Actions: CI/CD run #1 succeeded — Playwright tests (39 runs) → Deploy to Vercel (with live smoke test)', 'width:88%')}
-${figure('CI-02_live_app_on_phone.png', `Figure 3 — The live app on Vercel (${LIVE_URL.replace('https://', '')}) on an emulated Android phone`, 'width:30%')}
+${figure('CI-01_github_actions_run.png', 'Figure 5 — GitHub Actions: CI/CD run succeeded — Playwright tests → Deploy to Vercel (with live smoke test)', 'width:88%')}
+${figure('CI-02_live_app_on_phone.png', `Figure 6 — The live app on Vercel (${LIVE_URL.replace('https://', '')}) on an emulated Android phone`, 'width:30%')}
 
 <h2 class="page">17. Test Sign-Off</h2>
 ${table(['Role', 'Name', 'Signature', 'Date'],

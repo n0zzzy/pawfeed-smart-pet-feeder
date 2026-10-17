@@ -8,6 +8,8 @@
   const MAX_SLOTS = 10;           // hopper/dispenser limit
   const LOW_FOOD_THRESHOLD = 15;  // percent
   const RECONNECT_DELAY_MS = 3000;
+  // Demo account for the class project (not real security: the app has no private data).
+  const ACCOUNTS = { testuser: 'Feeder@123' };
 
   function freshState() {
     return {
@@ -38,7 +40,9 @@
   function normTime(t) { return t.length === 5 ? `${t}:00` : t; }
 
   // load(): returns a saved state or null.  save(state): persists it (optional).
-  function createDevice({ load, save } = {}) {
+  // authenticate(username, password): checks a login (defaults to the built-in demo account).
+  function createDevice({ load, save, authenticate } = {}) {
+    const checkLogin = authenticate || ((username, password) => ACCOUNTS[username] === password);
     let state = (load && load()) || freshState();
     let reconnectTimer = null;
     const persist = () => save && save(state);
@@ -109,6 +113,16 @@
     }
 
     const routes = {
+      'POST /api/login': ({ username, password }) => {
+        if (!username || !password) {
+          return [400, { status: 'MISSING_CREDENTIALS', message: 'Enter your username and password.' }];
+        }
+        if (!checkLogin(username, password)) {
+          return [401, { status: 'INVALID_CREDENTIALS', message: 'Invalid username or password.' }];
+        }
+        return [200, { status: 'OK', user: username }];
+      },
+
       'GET /api/status': () => [200, state],
 
       'POST /api/feed': () => {

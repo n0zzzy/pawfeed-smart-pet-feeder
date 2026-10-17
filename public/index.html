@@ -20,6 +20,7 @@
   }
   * { box-sizing: border-box; }
   button, input { font-family: inherit; }
+  [hidden] { display: none !important; }
   body { margin: 0; font-family: Segoe UI, system-ui, sans-serif; background: var(--bg); color: var(--ink); }
   header { background: var(--brand); color: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   header h1 { font-size: 20px; margin: 0; }
@@ -72,9 +73,37 @@
     th, td { padding: 6px 5px; }
     .sep { display: none; }
   }
+  /* login */
+  .login-wrap { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--brand); }
+  .login-card { width: 100%; max-width: 380px; background: var(--card); border-radius: 16px; padding: 28px 24px; display: grid; gap: 14px; }
+  .login-card h1 { margin: 0; font-size: 22px; }
+  .login-card .sub { color: var(--muted); font-size: 14px; margin-top: -8px; }
+  .login-card label { font-weight: 600; font-size: 14px; display: grid; gap: 6px; }
+  .login-card input { width: 100%; padding: 11px 12px; font-size: 15px; }
+  .login-card button { padding: 12px; font-size: 16px; }
+  .login-hint { font-size: 13px; color: var(--muted); background: var(--bg); border-radius: 8px; padding: 8px 10px; }
+  .user-chip { font-size: 13px; opacity: .9; }
+  #logoutBtn { background: transparent; border: 1px solid rgba(255,255,255,.5); padding: 5px 10px; font-size: 13px; }
 </style>
 </head>
 <body>
+<section class="login-wrap" id="loginScreen" data-testid="login-screen" hidden>
+  <form class="login-card" id="loginForm" novalidate>
+    <h1>🐾 PawFeed</h1>
+    <div class="sub">Sign in to manage your Smart Pet Feeder</div>
+    <label for="loginUser">Username
+      <input id="loginUser" name="username" autocomplete="username" data-testid="login-username">
+    </label>
+    <label for="loginPass">Password
+      <input id="loginPass" name="password" type="password" autocomplete="current-password" data-testid="login-password">
+    </label>
+    <button type="submit" data-testid="login-submit">Log in</button>
+    <div class="msg bad" data-testid="login-error" role="alert"></div>
+    <div class="login-hint">Demo account: <b>testuser</b> / <b>Feeder@123</b></div>
+  </form>
+</section>
+
+<div id="app" data-testid="dashboard" hidden>
 <header>
   <div>
     <h1>🐾 PawFeed — Smart Pet Feeder</h1>
@@ -84,6 +113,8 @@
     <span>Device clock: <b data-testid="device-clock">--:--:--</b></span>
     <span class="badge" data-testid="connection-status">...</span>
     <span class="mode" data-testid="data-mode"></span>
+    <span class="user-chip">👤 <span data-testid="logged-in-user"></span></span>
+    <button id="logoutBtn" data-testid="logout-btn">Log out</button>
     <button id="installBtn" data-testid="install-btn">⬇ Install app</button>
   </div>
 </header>
@@ -175,6 +206,7 @@
     </div>
   </section>
 </main>
+</div>
 
 <script src="/device-core.js"></script>
 <script>
@@ -324,11 +356,46 @@ document.getElementById('installBtn').onclick = async () => {
 };
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
 
+// ----- login -----
+const SESSION_KEY = 'pawfeed-session';
+function savedUser() {
+  try { return JSON.parse(localStorage.getItem(SESSION_KEY))?.user || null; } catch { return null; }
+}
+let polling = null;
+function showDashboard(user) {
+  document.getElementById('loginScreen').hidden = true;
+  document.getElementById('app').hidden = false;
+  $('logged-in-user').textContent = user;
+  refresh();
+  if (!polling) polling = setInterval(refresh, 250);
+}
+function showLogin() {
+  clearInterval(polling); polling = null;
+  document.getElementById('app').hidden = true;
+  document.getElementById('loginScreen').hidden = false;
+  $('login-error').textContent = '';
+  $('login-password').value = '';
+  $('login-username').focus();
+}
+document.getElementById('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const { ok, data } = await api('POST', '/api/login', {
+    username: $('login-username').value.trim(), password: $('login-password').value,
+  });
+  if (!ok) { $('login-error').textContent = `✘ ${data.message}`; return; }
+  try { localStorage.setItem(SESSION_KEY, JSON.stringify({ user: data.user })); } catch { /* storage blocked */ }
+  showDashboard(data.user);
+});
+document.getElementById('logoutBtn').onclick = () => {
+  try { localStorage.removeItem(SESSION_KEY); } catch { /* storage blocked */ }
+  showLogin();
+};
+
 (async () => {
   await detectMode();
   $('data-mode').textContent = mode === 'server' ? 'Cloud API' : 'On-device demo';
-  refresh();
-  setInterval(refresh, 250);
+  const user = savedUser();
+  if (user) showDashboard(user); else showLogin();
 })();
 </script>
 </body>

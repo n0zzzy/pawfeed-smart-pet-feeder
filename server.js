@@ -4,10 +4,12 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const { createDevice } = require('./public/device-core');
+const { openDatabase } = require('./db');
 
 const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = path.join(__dirname, 'public');
-const device = createDevice();
+const db = openDatabase();
+const device = createDevice({ load: db.load, save: db.save, authenticate: db.authenticate });
 
 function send(res, code, body) {
   res.writeHead(code, { 'Content-Type': 'application/json' });
@@ -54,4 +56,4 @@ const server = http.createServer(async (req, res) => {
   });
 });
 
-server.listen(PORT, () => console.log(`Smart Pet Feeder running at http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`Smart Pet Feeder running at http://localhost:${PORT} (database: ${db.file})`));

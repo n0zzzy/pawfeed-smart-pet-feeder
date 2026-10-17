@@ -1,14 +1,23 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
+// Tests use their own SQLite file so they never touch the app's normal data.
+const TEST_DB = 'data/pawfeed-test.db';
+
 module.exports = defineConfig({
   testDir: './tests',
   // All tests share one simulated device, so run them one at a time.
   fullyParallel: false,
   workers: 1,
   timeout: 90_000,
+  globalSetup: './tests/global-setup.js',
   globalTeardown: './tests/global-teardown.js',
-  reporter: [['list'], ['html', { open: 'never' }], ['json', { outputFile: 'docs/results.json' }]],
+  reporter: [
+    ['list'],
+    ['html', { open: 'never' }],
+    ['json', { outputFile: 'docs/results.json' }],
+    ['allure-playwright', { resultsDir: 'allure-results' }],
+  ],
   use: {
     // Set BASE_URL to test a deployed site (e.g. the Vercel URL) instead of the local server.
     baseURL: process.env.BASE_URL || 'http://localhost:3000',
@@ -25,8 +34,12 @@ module.exports = defineConfig({
     { name: 'iphone-14', use: { ...devices['iPhone 14'] } },
   ],
   webServer: process.env.BASE_URL ? undefined : {
-    command: 'node server.js',
+    command: 'node --disable-warning=ExperimentalWarning server.js',
     url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
+    // Always start our own server so the tests run against the test database.
+    reuseExistingServer: false,
+    env: { PAWFEED_DB: TEST_DB },
   },
 });
+
+module.exports.TEST_DB = TEST_DB;

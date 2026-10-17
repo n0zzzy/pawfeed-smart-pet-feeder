@@ -1,9 +1,30 @@
 // Automation tests for the Automatic Smart Pet Feeder
-// Mapped to the "Define Automation Testing" scenarios AS-01 .. AS-06
+// Mapped to the "Define Automation Testing" scenarios AS-01 .. AS-06, plus login, mobile app and database checks
 const { test, expect } = require('@playwright/test');
 const path = require('path');
+const { TEST_DB } = require('../playwright.config');
 
 const id = name => `[data-testid="${name}"]`;
+const USER = { username: 'testuser', password: 'Feeder@123' };
+
+async function login(page, username = USER.username, password = USER.password) {
+  await page.locator(id('login-username')).fill(username);
+  await page.locator(id('login-password')).fill(password);
+  await page.locator(id('login-submit')).click();
+}
+
+// Opens the test SQLite database read-only (node:sqlite prints an ExperimentalWarning, which we hide).
+function openTestDb() {
+  const emit = process.emitWarning;
+  process.emitWarning = (w, ...rest) => (String(rest[0] || w).includes('Experimental') ? undefined : emit.call(process, w, ...rest));
+  try {
+    // getBuiltinModule skips Playwright's test-file loader, which cannot load node:sqlite through require().
+    const { DatabaseSync } = process.getBuiltinModule('node:sqlite');
+    return new DatabaseSync(path.join(__dirname, '..', TEST_DB), { readOnly: true });
+  } finally {
+    process.emitWarning = emit;
+  }
+}
 
 // Saves a full-page screenshot to /screenshots (mobile runs go in a sub-folder) and attaches it to the HTML report.
 async function snap(page, testInfo, name) {
@@ -28,9 +49,12 @@ async function setPortion(page, slots) {
   await page.locator(id('portion-save')).click();
 }
 
-test.beforeEach(async ({ page, request }) => {
+// Reset the device and log in, except for the login tests (@auth), which start on the login screen.
+test.beforeEach(async ({ page, request }, testInfo) => {
   await request.post('/api/sim/reset');
   await page.goto('/');
+  if (testInfo.tags.includes('@auth')) return;
+  await login(page);
   await expect(page.locator(id('connection-status'))).toHaveText('CONNECTED');
 });
 
@@ -282,5 +306,69 @@ test.describe('Responsive layout', () => {
     const vp = page.viewportSize();
     record(testInfo, `Viewport ${vp.width}×${vp.height}: page width ${scrollWidth} px fits ${clientWidth} px; Feed Now button ${Math.round(box.width)}×${Math.round(box.height)} px and visible.`);
     await snap(page, testInfo, 'ATC-13_responsive_layout');
+  });
+});
+
+test.describe('Login and Authentication', () => {
+  test('ATC-14: Login with valid credentials shows the dashboard', { tag: ['@auth', '@smoke'] }, async ({ page }, testInfo) => {
+    await expect(page.locator(id('login-screen'))).toBeVisible();          // 1. Login page displayed
+    await page.locator(id('login-username')).fill(USER.username);           // 2. Enter username
+    await expect(page.locator(id('login-username'))).toHaveValue(USER.username);
+    await page.locator(id('login-password')).fill(USER.password);           // 3. Enter password
+    await expect(page.locator(id('login-password'))).toHaveAttribute('type', 'password');
+    await snap(page, testInfo, 'ATC-14a_login_page');
+    await page.locator(id('login-submit')).click();                         // 4. Click Login
+
+    await expect(page.locator(id('dashboard'))).toBeVisible();               // Dashboard displayed
+    await expect(page.locator(id('login-screen'))).toBeHidden();
+    await expect(page.locator(id('logged-in-user'))).toHaveText(USER.username);
+    await expect(page.locator(id('manual-feed-btn'))).toBeVisible();
+
+    record(testInfo, `Login page shown; username "${USER.username}" and masked password accepted; after Log in the dashboard opened showing "👤 ${USER.username}".`);
+    await snap(page, testInfo, 'ATC-14b_dashboard_displayed');
+  });
+
+  test('ATC-15: Login with a wrong password is rejected', { tag: '@auth' }, async ({ page }, testInfo) => {
+    await expect(page.locator(id('login-screen'))).toBeVisible();
+    await login(page, USER.username, 'WrongPass1');
+
+    await expect(page.locator(id('login-error'))).toHaveText('✘ Invalid username or password.');
+    await expect(page.locator(id('dashboard'))).toBeHidden();
+    await expect(page.locator(id('login-screen'))).toBeVisible();
+
+    record(testInfo, 'App showed "✘ Invalid username or password." and stayed on the login page; the dashboard was not shown.');
+    await snap(page, testInfo, 'ATC-15_invalid_login_rejected');
+  });
+});
+
+test.describe('Database (SQLite)', () => {
+  test('ATC-16: Settings, feeds and accounts are stored in the SQLite database', async ({ page }, testInfo) => {
+    test.skip(Boolean(process.env.BASE_URL), 'The live Vercel site has no server database');
+
+    await setPortion(page, 3);
+    await expect(page.locator(id('portion-current'))).toHaveText('3');
+    await page.locator(id('manual-feed-btn')).click();
+    await expect(page.locator(id('dispense-count'))).toHaveText('1');
+    const uiWeight = await lastWeight(page);
+
+    const db = openTestDb();
+    try {
+      const device = db.prepare('SELECT portion_slots, dispense_count FROM device WHERE id = 1').get();
+      const feed = db.prepare('SELECT source, slots, weight_grams, status FROM feed_log ORDER BY id DESC LIMIT 1').get();
+      const user = db.prepare('SELECT password_hash FROM users WHERE username = ?').get(USER.username);
+
+      expect(device.portion_slots).toBe(3);
+      expect(device.dispense_count).toBe(1);
+      expect(feed.status).toBe('DISPENSED');
+      expect(feed.slots).toBe(3);
+      expect(feed.weight_grams).toBe(uiWeight);
+      expect(user.password_hash.startsWith('scrypt$')).toBeTruthy();
+      expect(user.password_hash).not.toContain(USER.password);
+
+      record(testInfo, `device row: portion_slots=${device.portion_slots}, dispense_count=${device.dispense_count}; feed_log row: ${feed.source} ${feed.slots} slots ${feed.weight_grams} g ${feed.status} (matches the app); users row stores a scrypt hash, not the plain password.`);
+    } finally {
+      db.close();
+    }
+    await snap(page, testInfo, 'ATC-16_saved_in_database');
   });
 });

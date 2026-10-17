@@ -1,7 +1,11 @@
 node_modules/
 test-results/
 playwright-report/
+allure-results/
+allure-report/
 public/report/
+public/allure/
+data/
 docs/Software_Automation_Test_Document.html
 .vercel
 .env*

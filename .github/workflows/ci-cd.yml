@@ -1,7 +1,7 @@
 # CI/CD for PawFeed — Smart Pet Feeder
 #  1. test:   on every push / pull request, run the Playwright suite on Desktop Chrome, Android (Pixel 7) and iPhone 14
-#  2. deploy: only on main and only if every test passed, deploy the app (plus the live test report at /report) to Vercel,
-#             then smoke-test the live production site on all three platforms
+#  2. deploy: only on main and only if every test passed, deploy the app (plus the live Playwright report at /report
+#             and the Allure report at /allure) to Vercel, then smoke-test the live production site on all three platforms
 name: CI/CD
 
 env:
@@ -45,6 +45,16 @@ jobs:
           name: screenshots
           path: screenshots/
           retention-days: 30
+      - name: Build Allure report
+        if: ${{ !cancelled() }}
+        run: npm run allure
+      - name: Upload Allure report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/
+          retention-days: 30
 
   deploy:
     name: Deploy to Vercel
@@ -68,6 +78,11 @@ jobs:
         with:
           name: playwright-report
           path: public/report
+      - name: Add the Allure report to the site (/allure)
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-report
+          path: public/allure
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
       - name: Pull Vercel project settings
